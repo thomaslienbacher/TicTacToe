@@ -149,6 +149,33 @@ src/button.cpp.s:
 	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/button.cpp.s
 .PHONY : src/button.cpp.s
 
+src/eventhandler.obj: src/eventhandler.cpp.obj
+
+.PHONY : src/eventhandler.obj
+
+# target to build an object file
+src/eventhandler.cpp.obj:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj
+.PHONY : src/eventhandler.cpp.obj
+
+src/eventhandler.i: src/eventhandler.cpp.i
+
+.PHONY : src/eventhandler.i
+
+# target to preprocess a source file
+src/eventhandler.cpp.i:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.i
+.PHONY : src/eventhandler.cpp.i
+
+src/eventhandler.s: src/eventhandler.cpp.s
+
+.PHONY : src/eventhandler.s
+
+# target to generate assembly for a file
+src/eventhandler.cpp.s:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.s
+.PHONY : src/eventhandler.cpp.s
+
 src/gamescene.obj: src/gamescene.cpp.obj
 
 .PHONY : src/gamescene.obj
@@ -296,6 +323,9 @@ help:
 	@echo ... src/button.obj
 	@echo ... src/button.i
 	@echo ... src/button.s
+	@echo ... src/eventhandler.obj
+	@echo ... src/eventhandler.i
+	@echo ... src/eventhandler.s
 	@echo ... src/gamescene.obj
 	@echo ... src/gamescene.i
 	@echo ... src/gamescene.s

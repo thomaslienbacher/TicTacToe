@@ -4,29 +4,42 @@
 
 #include "button.hpp"
 
-Button::Button(std::string text, sf::Texture texture, sf::FloatRect bounds, std::function<void()> onclick)
-: text(text), sprite(texture), bounds(bounds), onclick(onclick) {
-    sprite.setPosition(bounds.left, bounds.top);
-    const sf::IntRect& ir = sprite.getTextureRect();
-    sprite.setOrigin(ir.left + ir.width / 2, ir.top + ir.height / 2);
+Button::Button(std::string text, sf::Texture texture, sf::Vector2f position, std::function<void()> onclick)
+: sprite(texture), position(position), onclick(onclick) {
+    setText(text);
 }
 
 void Button::draw(std::shared_ptr<sf::RenderWindow> &window) {
+    if(down) sprite.setScale(DOWN_SCALE, DOWN_SCALE);
+    else sprite.setScale(1, 1);
+
+    auto gb = text.getGlobalBounds();
+    sprite.setPosition(position.x + sprite.getOrigin().x, position.y + sprite.getOrigin().y);
+    text.setPosition(position.x + sprite.getOrigin().x - gb.width / 2, position.y + sprite.getOrigin().y - gb.height / 2);
+    text.setFillColor(sf::Color::Black);
+
     window->draw(sprite);
+    window->draw(text);
 }
 
-void Button::check(sf::Vector2i pos) {
-    if(bounds.contains(pos.x, pos.y)){
+void Button::mouseDown(int x, int y) {
+    if(getBounds().contains(x, y)) down = true;
+}
+
+void Button::mouseUp(int x, int y) {
+    if(getBounds().contains(x, y)) {
         onclick();
     }
+
+    down = false;
 }
 
-const std::string &Button::getText() const {
-    return text;
+void Button::setFont(const sf::Font &font) {
+    text.setFont(font);
 }
 
 void Button::setText(const std::string &text) {
-    Button::text = text;
+    this->text.setString(text);
 }
 
 const sf::Sprite &Button::getSprite() const {
@@ -35,18 +48,13 @@ const sf::Sprite &Button::getSprite() const {
 
 void Button::setTexture(const sf::Texture &texture) {
     sprite.setTexture(texture, true);
-}
-
-const sf::FloatRect &Button::getBounds() const {
-    return bounds;
-}
-
-void Button::setBounds(const sf::FloatRect &bounds) {
-    Button::bounds = bounds;
-
-    sprite.setPosition(bounds.left, bounds.top);
     const sf::IntRect& ir = sprite.getTextureRect();
-    sprite.setOrigin(ir.left + ir.width / 2, ir.top + ir.height / 2);
+    sprite.setOrigin(ir.width / 2, ir.height / 2);
+}
+
+const sf::FloatRect Button::getBounds() const {
+    const sf::IntRect& ir = sprite.getTextureRect();
+    return {position.x, position.y, ir.width, ir.height};
 }
 
 const std::function<void()> &Button::getOnclick() const {
@@ -55,4 +63,12 @@ const std::function<void()> &Button::getOnclick() const {
 
 void Button::setOnclick(const std::function<void()> &onclick) {
     Button::onclick = onclick;
+}
+
+const sf::Vector2f &Button::getPosition() const {
+    return position;
+}
+
+void Button::setPosition(const sf::Vector2f &position) {
+    Button::position = position;
 }

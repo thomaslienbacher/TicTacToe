@@ -5,30 +5,44 @@
 #include <iostream>
 #include "menuscene.hpp"
 
-MenuScene::MenuScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
+MenuScene::MenuScene() {
     buttonTex.loadFromFile("res/button.png");
+    font.loadFromFile("res/roboto.ttf");
 
     playHostButton.setText("Play as Host");
     playHostButton.setTexture(buttonTex);
-    playHostButton.setBounds({100, 300, 100, 100});
+    playHostButton.setPosition({100, 300});
+    playHostButton.setFont(font);
     playHostButton.setOnclick([]{std::cout << "play as host clicked" << std::endl;});
 
     playClientButton.setText("Play as Client");
     playClientButton.setTexture(buttonTex);
-    playClientButton.setBounds({100, 150, 100, 100});
-    playClientButton.setOnclick([]{std::cout << "play as host clicked" << std::endl;});
+    playClientButton.setPosition({100, 100});
+    playClientButton.setFont(font);
+    playClientButton.setOnclick([]{std::cout << "play as client clicked" << std::endl;});
 }
 
 void MenuScene::update(float delta) {
 
-    //buttons
-    auto pos = sf::Mouse::getPosition(*gameInfo->window->getWindow().get());
-
-    playHostButton.check(pos);
-    playClientButton.check(pos);
 }
 
 void MenuScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
     playHostButton.draw(window);
     playClientButton.draw(window);
+}
+
+void MenuScene::handle(sf::Event event) {
+    if(event.type == sf::Event::MouseButtonPressed) {
+        if(event.mouseButton.button == sf::Mouse::Button::Left){
+            playHostButton.mouseDown(event.mouseButton.x, event.mouseButton.y);
+            playClientButton.mouseDown(event.mouseButton.x, event.mouseButton.y);
+        }
+    }
+
+    if(event.type == sf::Event::MouseButtonReleased) {
+        if(event.mouseButton.button == sf::Mouse::Button::Left){
+            playHostButton.mouseUp(event.mouseButton.x, event.mouseButton.y);
+            playClientButton.mouseUp(event.mouseButton.x, event.mouseButton.y);
+        }
+    }
 }

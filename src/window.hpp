@@ -6,11 +6,14 @@
 #define TICTACTOE_WINDOW_HPP
 
 #include <memory>
+#include <list>
 #include "sfml.hpp"
+#include "eventhandler.hpp"
 
 class Window {
     sf::Clock clock;
     std::shared_ptr<sf::RenderWindow> window;
+    std::list<EventHandler*> eventHandlers;
 
 public:
     static constexpr unsigned int VWIDTH = 500;
@@ -23,6 +26,8 @@ public:
     void prepare();
     void display();
     bool isRunning();
+
+    void addEventHandler(EventHandler *handler);
 
     std::shared_ptr<sf::RenderWindow> &getWindow();
 };

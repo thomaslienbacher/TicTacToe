@@ -4,6 +4,8 @@
 
 #include <iostream>
 #include "window.hpp"
+#include "menuscene.hpp"
+#include "gamescene.hpp"
 
 Window::Window(std::string title){
     window = std::make_shared<sf::RenderWindow>(sf::VideoMode(VWIDTH, VHEIGHT), title,
@@ -28,9 +30,7 @@ float Window::update() {
             window->close();
         }
 
-        if(event.type == sf::Event::MouseButtonPressed) {
-            std::cout << event.mouseButton.x << " " << event.mouseButton.y << " " << event.mouseButton.button << std::endl;
-        }
+        for(EventHandler* handler : eventHandlers) handler->handle(event);
     }
 
     return clock.restart().asSeconds();
@@ -46,6 +46,10 @@ void Window::display() {
 
 bool Window::isRunning() {
     return window->isOpen();
+}
+
+void Window::addEventHandler(EventHandler *handler) {
+    eventHandlers.push_back(handler);
 }
 
 std::shared_ptr<sf::RenderWindow> &Window::getWindow() {

@@ -90,7 +90,10 @@
 		<Unit filename="E:/Thomas/Repositories/TicTacToe/src/button.hpp">
 			<Option target="TicTacToe"/>
 		</Unit>
-		<Unit filename="E:/Thomas/Repositories/TicTacToe/src/gameinfo.hpp">
+		<Unit filename="E:/Thomas/Repositories/TicTacToe/src/eventhandler.cpp">
+			<Option target="TicTacToe"/>
+		</Unit>
+		<Unit filename="E:/Thomas/Repositories/TicTacToe/src/eventhandler.hpp">
 			<Option target="TicTacToe"/>
 		</Unit>
 		<Unit filename="E:/Thomas/Repositories/TicTacToe/src/gamescene.cpp">

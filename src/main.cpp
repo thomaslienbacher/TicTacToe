@@ -2,16 +2,17 @@
 #include "gamescene.hpp"
 #include "menuscene.hpp"
 
+enum State {MENU, GAME};
+
 int main() {
     State gamestate = MENU;
     Window window("Tic Tac Toe");
 
-    GameInfo gameInfo;
-    gameInfo.window = &window;
-    gameInfo.gamestate = &gamestate;
 
-    MenuScene menuScene(&gameInfo);
-    GameScene gameScene(&gameInfo);
+    MenuScene menuScene;
+    GameScene gameScene;
+
+    window.addEventHandler(&menuScene);
 
     while(window.isRunning()) {
         float delta = window.update();

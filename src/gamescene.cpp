@@ -4,4 +4,3 @@
 
 #include "gamescene.hpp"
 
-GameScene::GameScene(GameInfo *gameInfo) : gameInfo(gameInfo) {}

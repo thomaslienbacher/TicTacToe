@@ -8,28 +8,33 @@
 
 #include <functional>
 #include "sfml.hpp"
-#include "gameinfo.hpp"
+#include <memory>
 
 class Button {
 
-    std::string text;
+    static constexpr float DOWN_SCALE = 0.94f;
+
     sf::Sprite sprite;
-    sf::FloatRect bounds;
+    sf::Text text;
+    sf::Vector2f position;
     std::function<void()> onclick;
+    bool down = false;
 
 public:
     Button() = default;
-    Button(std::string text, sf::Texture texture, sf::FloatRect bounds, std::function<void()> onclick);
+    Button(std::string text, sf::Texture texture, sf::Vector2f position, std::function<void()> onclick);
 
     void draw(std::shared_ptr<sf::RenderWindow> &window);
-    void check(sf::Vector2i pos);
+    void mouseDown(int x, int y);
+    void mouseUp(int x, int y);
 
-    const std::string &getText() const;
+    void setFont(const sf::Font &font);
     void setText(const std::string &text);
     const sf::Sprite &getSprite() const;
     void setTexture(const sf::Texture &texture);
-    const sf::FloatRect &getBounds() const;
-    void setBounds(const sf::FloatRect &bounds);
+    const sf::Vector2f &getPosition() const;
+    void setPosition(const sf::Vector2f &position);
+    const sf::FloatRect getBounds() const;
     const std::function<void()> &getOnclick() const;
     void setOnclick(const std::function<void()> &onclick);
 };
