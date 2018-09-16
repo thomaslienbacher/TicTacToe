@@ -24,9 +24,7 @@ public:
     void display();
     bool isRunning();
 
-    const sf::Clock &getClock() const;
-
-    const std::shared_ptr<sf::RenderWindow> &getWindow() const;
+    std::shared_ptr<sf::RenderWindow> &getWindow();
 };
 
 

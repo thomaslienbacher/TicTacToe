@@ -2,6 +2,7 @@
 // Created by Thomas Lienbacher on 13.09.2018.
 //
 
+#include <iostream>
 #include "window.hpp"
 
 Window::Window(std::string title){
@@ -10,6 +11,10 @@ Window::Window(std::string title){
 
     window->setFramerateLimit(30);
     window->setVerticalSyncEnabled(true);
+
+    sf::Image icon;
+    icon.loadFromFile("res/icon.png");
+    window->setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 }
 
 Window::~Window() {
@@ -21,6 +26,10 @@ float Window::update() {
     while (window->pollEvent(event)) {
         if(event.type == sf::Event::Closed) {
             window->close();
+        }
+
+        if(event.type == sf::Event::MouseButtonPressed) {
+            std::cout << event.mouseButton.x << " " << event.mouseButton.y << " " << event.mouseButton.button << std::endl;
         }
     }
 
@@ -39,10 +48,6 @@ bool Window::isRunning() {
     return window->isOpen();
 }
 
-const sf::Clock &Window::getClock() const {
-    return clock;
-}
-
-const std::shared_ptr<sf::RenderWindow> &Window::getWindow() const {
+std::shared_ptr<sf::RenderWindow> &Window::getWindow() {
     return window;
 }

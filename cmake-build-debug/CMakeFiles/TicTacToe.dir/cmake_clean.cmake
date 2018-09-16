@@ -1,9 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/TicTacToe.dir/src/main.cpp.obj"
   "CMakeFiles/TicTacToe.dir/src/window.cpp.obj"
-  "CMakeFiles/TicTacToe.dir/src/gameinfo.cpp.obj"
   "CMakeFiles/TicTacToe.dir/src/map.cpp.obj"
   "CMakeFiles/TicTacToe.dir/src/button.cpp.obj"
+  "CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj"
+  "CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj"
   "TicTacToe.pdb"
   "TicTacToe.exe"
   "TicTacToe.exe.manifest"

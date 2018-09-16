@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2017.3.3\bin\cmake\bin\cmake.exe"
+CMAKE_COMMAND = "E:\Programme\CLion 2017.3.3\bin\cmake\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -E remove -f
+RM = "E:\Programme\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe"
+CMAKE_SOURCE_DIR = E:\Thomas\Repositories\TicTacToe
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug"
+CMAKE_BINARY_DIR = E:\Thomas\Repositories\TicTacToe\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacTo
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"E:\Programme\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"E:\Programme\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug\CMakeFiles" "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -149,32 +149,32 @@ src/button.cpp.s:
 	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/button.cpp.s
 .PHONY : src/button.cpp.s
 
-src/gameinfo.obj: src/gameinfo.cpp.obj
+src/gamescene.obj: src/gamescene.cpp.obj
 
-.PHONY : src/gameinfo.obj
+.PHONY : src/gamescene.obj
 
 # target to build an object file
-src/gameinfo.cpp.obj:
-	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/gameinfo.cpp.obj
-.PHONY : src/gameinfo.cpp.obj
+src/gamescene.cpp.obj:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj
+.PHONY : src/gamescene.cpp.obj
 
-src/gameinfo.i: src/gameinfo.cpp.i
+src/gamescene.i: src/gamescene.cpp.i
 
-.PHONY : src/gameinfo.i
+.PHONY : src/gamescene.i
 
 # target to preprocess a source file
-src/gameinfo.cpp.i:
-	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/gameinfo.cpp.i
-.PHONY : src/gameinfo.cpp.i
+src/gamescene.cpp.i:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/gamescene.cpp.i
+.PHONY : src/gamescene.cpp.i
 
-src/gameinfo.s: src/gameinfo.cpp.s
+src/gamescene.s: src/gamescene.cpp.s
 
-.PHONY : src/gameinfo.s
+.PHONY : src/gamescene.s
 
 # target to generate assembly for a file
-src/gameinfo.cpp.s:
-	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/gameinfo.cpp.s
-.PHONY : src/gameinfo.cpp.s
+src/gamescene.cpp.s:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/gamescene.cpp.s
+.PHONY : src/gamescene.cpp.s
 
 src/main.obj: src/main.cpp.obj
 
@@ -230,6 +230,33 @@ src/map.cpp.s:
 	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/map.cpp.s
 .PHONY : src/map.cpp.s
 
+src/menuscene.obj: src/menuscene.cpp.obj
+
+.PHONY : src/menuscene.obj
+
+# target to build an object file
+src/menuscene.cpp.obj:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj
+.PHONY : src/menuscene.cpp.obj
+
+src/menuscene.i: src/menuscene.cpp.i
+
+.PHONY : src/menuscene.i
+
+# target to preprocess a source file
+src/menuscene.cpp.i:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/menuscene.cpp.i
+.PHONY : src/menuscene.cpp.i
+
+src/menuscene.s: src/menuscene.cpp.s
+
+.PHONY : src/menuscene.s
+
+# target to generate assembly for a file
+src/menuscene.cpp.s:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/menuscene.cpp.s
+.PHONY : src/menuscene.cpp.s
+
 src/window.obj: src/window.cpp.obj
 
 .PHONY : src/window.obj
@@ -269,15 +296,18 @@ help:
 	@echo ... src/button.obj
 	@echo ... src/button.i
 	@echo ... src/button.s
-	@echo ... src/gameinfo.obj
-	@echo ... src/gameinfo.i
-	@echo ... src/gameinfo.s
+	@echo ... src/gamescene.obj
+	@echo ... src/gamescene.i
+	@echo ... src/gamescene.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
 	@echo ... src/map.obj
 	@echo ... src/map.i
 	@echo ... src/map.s
+	@echo ... src/menuscene.obj
+	@echo ... src/menuscene.i
+	@echo ... src/menuscene.s
 	@echo ... src/window.obj
 	@echo ... src/window.i
 	@echo ... src/window.s

@@ -11,20 +11,27 @@
 #include "gameinfo.hpp"
 
 class Button {
-    static constexpr float DOWN_SCALE = 0.93f;
 
     std::string text;
     sf::Sprite sprite;
     sf::FloatRect bounds;
     std::function<void()> onclick;
-    bool down;
 
 public:
+    Button() = default;
     Button(std::string text, sf::Texture texture, sf::FloatRect bounds, std::function<void()> onclick);
 
-    void draw(sf::RenderWindow &window);
-    void mouseDown(int x, int y);
-    void mouseUp(int x, int y);
+    void draw(std::shared_ptr<sf::RenderWindow> &window);
+    void check(sf::Vector2i pos);
+
+    const std::string &getText() const;
+    void setText(const std::string &text);
+    const sf::Sprite &getSprite() const;
+    void setTexture(const sf::Texture &texture);
+    const sf::FloatRect &getBounds() const;
+    void setBounds(const sf::FloatRect &bounds);
+    const std::function<void()> &getOnclick() const;
+    void setOnclick(const std::function<void()> &onclick);
 };
 
 

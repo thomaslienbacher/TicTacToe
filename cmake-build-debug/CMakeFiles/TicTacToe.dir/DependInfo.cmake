@@ -4,11 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Eigene Dateien/Programmieren/C++/CLion-Workspace/TicTacToe/src/button.cpp" "C:/Eigene Dateien/Programmieren/C++/CLion-Workspace/TicTacToe/cmake-build-debug/CMakeFiles/TicTacToe.dir/src/button.cpp.obj"
-  "C:/Eigene Dateien/Programmieren/C++/CLion-Workspace/TicTacToe/src/gameinfo.cpp" "C:/Eigene Dateien/Programmieren/C++/CLion-Workspace/TicTacToe/cmake-build-debug/CMakeFiles/TicTacToe.dir/src/gameinfo.cpp.obj"
-  "C:/Eigene Dateien/Programmieren/C++/CLion-Workspace/TicTacToe/src/main.cpp" "C:/Eigene Dateien/Programmieren/C++/CLion-Workspace/TicTacToe/cmake-build-debug/CMakeFiles/TicTacToe.dir/src/main.cpp.obj"
-  "C:/Eigene Dateien/Programmieren/C++/CLion-Workspace/TicTacToe/src/map.cpp" "C:/Eigene Dateien/Programmieren/C++/CLion-Workspace/TicTacToe/cmake-build-debug/CMakeFiles/TicTacToe.dir/src/map.cpp.obj"
-  "C:/Eigene Dateien/Programmieren/C++/CLion-Workspace/TicTacToe/src/window.cpp" "C:/Eigene Dateien/Programmieren/C++/CLion-Workspace/TicTacToe/cmake-build-debug/CMakeFiles/TicTacToe.dir/src/window.cpp.obj"
+  "E:/Thomas/Repositories/TicTacToe/src/button.cpp" "E:/Thomas/Repositories/TicTacToe/cmake-build-debug/CMakeFiles/TicTacToe.dir/src/button.cpp.obj"
+  "E:/Thomas/Repositories/TicTacToe/src/gamescene.cpp" "E:/Thomas/Repositories/TicTacToe/cmake-build-debug/CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj"
+  "E:/Thomas/Repositories/TicTacToe/src/main.cpp" "E:/Thomas/Repositories/TicTacToe/cmake-build-debug/CMakeFiles/TicTacToe.dir/src/main.cpp.obj"
+  "E:/Thomas/Repositories/TicTacToe/src/map.cpp" "E:/Thomas/Repositories/TicTacToe/cmake-build-debug/CMakeFiles/TicTacToe.dir/src/map.cpp.obj"
+  "E:/Thomas/Repositories/TicTacToe/src/menuscene.cpp" "E:/Thomas/Repositories/TicTacToe/cmake-build-debug/CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj"
+  "E:/Thomas/Repositories/TicTacToe/src/window.cpp" "E:/Thomas/Repositories/TicTacToe/cmake-build-debug/CMakeFiles/TicTacToe.dir/src/window.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
