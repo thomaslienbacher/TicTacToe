@@ -8,7 +8,7 @@ set(MGW_LOC "C:/MinGW/lib/")
 
 include_directories(${LIB_LOC}sfml/include/)
 
-add_executable(TicTacToe src/main.cpp src/sfml.hpp src/window.cpp src/window.hpp src/logiccontroller.cpp src/logiccontroller.hpp src/gameinfo.cpp src/gameinfo.hpp src/drawcontroller.cpp src/drawcontroller.hpp src/gameobjects/ma.hpp src/gameobjects/map.cpp src/gameobjects/map.hpp)
+add_executable(TicTacToe src/main.cpp src/sfml.hpp src/window.cpp src/window.hpp src/gameinfo.cpp src/gameinfo.hpp src/map.hpp src/map.cpp src/map.hpp src/button.cpp src/button.hpp)
 
 target_link_libraries(${PROJECT_NAME} ${MGW_LOC}libopengl32.a)
 target_link_libraries(${PROJECT_NAME} ${MGW_LOC}libwinmm.a)

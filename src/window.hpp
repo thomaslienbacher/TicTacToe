@@ -13,8 +13,8 @@ class Window {
     std::shared_ptr<sf::RenderWindow> window;
 
 public:
-    static constexpr unsigned int VWIDTH = 600;
-    static constexpr unsigned int VHEIGHT = 600;
+    static constexpr unsigned int VWIDTH = 500;
+    static constexpr unsigned int VHEIGHT = 500;
 
     Window(std::string title);
     ~Window();

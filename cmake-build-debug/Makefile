@@ -122,6 +122,141 @@ TicTacToe/fast:
 	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/build
 .PHONY : TicTacToe/fast
 
+src/button.obj: src/button.cpp.obj
+
+.PHONY : src/button.obj
+
+# target to build an object file
+src/button.cpp.obj:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/button.cpp.obj
+.PHONY : src/button.cpp.obj
+
+src/button.i: src/button.cpp.i
+
+.PHONY : src/button.i
+
+# target to preprocess a source file
+src/button.cpp.i:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/button.cpp.i
+.PHONY : src/button.cpp.i
+
+src/button.s: src/button.cpp.s
+
+.PHONY : src/button.s
+
+# target to generate assembly for a file
+src/button.cpp.s:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/button.cpp.s
+.PHONY : src/button.cpp.s
+
+src/gameinfo.obj: src/gameinfo.cpp.obj
+
+.PHONY : src/gameinfo.obj
+
+# target to build an object file
+src/gameinfo.cpp.obj:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/gameinfo.cpp.obj
+.PHONY : src/gameinfo.cpp.obj
+
+src/gameinfo.i: src/gameinfo.cpp.i
+
+.PHONY : src/gameinfo.i
+
+# target to preprocess a source file
+src/gameinfo.cpp.i:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/gameinfo.cpp.i
+.PHONY : src/gameinfo.cpp.i
+
+src/gameinfo.s: src/gameinfo.cpp.s
+
+.PHONY : src/gameinfo.s
+
+# target to generate assembly for a file
+src/gameinfo.cpp.s:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/gameinfo.cpp.s
+.PHONY : src/gameinfo.cpp.s
+
+src/main.obj: src/main.cpp.obj
+
+.PHONY : src/main.obj
+
+# target to build an object file
+src/main.cpp.obj:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/main.cpp.obj
+.PHONY : src/main.cpp.obj
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+src/map.obj: src/map.cpp.obj
+
+.PHONY : src/map.obj
+
+# target to build an object file
+src/map.cpp.obj:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/map.cpp.obj
+.PHONY : src/map.cpp.obj
+
+src/map.i: src/map.cpp.i
+
+.PHONY : src/map.i
+
+# target to preprocess a source file
+src/map.cpp.i:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/map.cpp.i
+.PHONY : src/map.cpp.i
+
+src/map.s: src/map.cpp.s
+
+.PHONY : src/map.s
+
+# target to generate assembly for a file
+src/map.cpp.s:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/map.cpp.s
+.PHONY : src/map.cpp.s
+
+src/window.obj: src/window.cpp.obj
+
+.PHONY : src/window.obj
+
+# target to build an object file
+src/window.cpp.obj:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/window.cpp.obj
+.PHONY : src/window.cpp.obj
+
+src/window.i: src/window.cpp.i
+
+.PHONY : src/window.i
+
+# target to preprocess a source file
+src/window.cpp.i:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/window.cpp.i
+.PHONY : src/window.cpp.i
+
+src/window.s: src/window.cpp.s
+
+.PHONY : src/window.s
+
+# target to generate assembly for a file
+src/window.cpp.s:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/window.cpp.s
+.PHONY : src/window.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -131,6 +266,21 @@ help:
 	@echo ... TicTacToe
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... src/button.obj
+	@echo ... src/button.i
+	@echo ... src/button.s
+	@echo ... src/gameinfo.obj
+	@echo ... src/gameinfo.i
+	@echo ... src/gameinfo.s
+	@echo ... src/main.obj
+	@echo ... src/main.i
+	@echo ... src/main.s
+	@echo ... src/map.obj
+	@echo ... src/map.i
+	@echo ... src/map.s
+	@echo ... src/window.obj
+	@echo ... src/window.i
+	@echo ... src/window.s
 .PHONY : help
 
 

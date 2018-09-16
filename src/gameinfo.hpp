@@ -7,16 +7,21 @@
 
 
 #include "sfml.hpp"
+#include "map.hpp"
+#include "button.hpp"
 
-class GameInfo {
+struct GameInfo {
     sf::Texture crossTex;
     sf::Texture circleTex;
+    sf::Texture layoutTex;
+    sf::Texture buttonTex;
 
-    char map[3][3];
+    Map map;
+    Button playHostButton;
+    Button playClientButton;
 
-public:
-    void loadResources();
-
+    GameInfo();
+    ~GameInfo() = default;
 };
 
 

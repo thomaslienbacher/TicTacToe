@@ -78,7 +78,9 @@ CMakeFiles/TicTacToe.dir/src/drawcontroller.cpp.obj: ../libs/sfml/include/SFML/W
 CMakeFiles/TicTacToe.dir/src/drawcontroller.cpp.obj: ../src/drawcontroller.cpp
 CMakeFiles/TicTacToe.dir/src/drawcontroller.cpp.obj: ../src/drawcontroller.hpp
 CMakeFiles/TicTacToe.dir/src/drawcontroller.cpp.obj: ../src/gameinfo.hpp
+CMakeFiles/TicTacToe.dir/src/drawcontroller.cpp.obj: ../src/gameobjects/map.hpp
 CMakeFiles/TicTacToe.dir/src/drawcontroller.cpp.obj: ../src/sfml.hpp
+CMakeFiles/TicTacToe.dir/src/drawcontroller.cpp.obj: ../src/window.hpp
 
 CMakeFiles/TicTacToe.dir/src/gameinfo.cpp.obj: ../libs/sfml/include/SFML/Config.hpp
 CMakeFiles/TicTacToe.dir/src/gameinfo.cpp.obj: ../libs/sfml/include/SFML/Graphics.hpp
@@ -156,7 +158,11 @@ CMakeFiles/TicTacToe.dir/src/gameinfo.cpp.obj: ../libs/sfml/include/SFML/Window/
 CMakeFiles/TicTacToe.dir/src/gameinfo.cpp.obj: ../libs/sfml/include/SFML/Window/WindowStyle.hpp
 CMakeFiles/TicTacToe.dir/src/gameinfo.cpp.obj: ../src/gameinfo.cpp
 CMakeFiles/TicTacToe.dir/src/gameinfo.cpp.obj: ../src/gameinfo.hpp
+CMakeFiles/TicTacToe.dir/src/gameinfo.cpp.obj: ../src/gameobjects/map.hpp
 CMakeFiles/TicTacToe.dir/src/gameinfo.cpp.obj: ../src/sfml.hpp
+
+CMakeFiles/TicTacToe.dir/src/gameobjects/map.cpp.obj: ../src/gameobjects/map.cpp
+CMakeFiles/TicTacToe.dir/src/gameobjects/map.cpp.obj: ../src/gameobjects/map.hpp
 
 CMakeFiles/TicTacToe.dir/src/logiccontroller.cpp.obj: ../libs/sfml/include/SFML/Config.hpp
 CMakeFiles/TicTacToe.dir/src/logiccontroller.cpp.obj: ../libs/sfml/include/SFML/Graphics.hpp
@@ -233,6 +239,7 @@ CMakeFiles/TicTacToe.dir/src/logiccontroller.cpp.obj: ../libs/sfml/include/SFML/
 CMakeFiles/TicTacToe.dir/src/logiccontroller.cpp.obj: ../libs/sfml/include/SFML/Window/WindowHandle.hpp
 CMakeFiles/TicTacToe.dir/src/logiccontroller.cpp.obj: ../libs/sfml/include/SFML/Window/WindowStyle.hpp
 CMakeFiles/TicTacToe.dir/src/logiccontroller.cpp.obj: ../src/gameinfo.hpp
+CMakeFiles/TicTacToe.dir/src/logiccontroller.cpp.obj: ../src/gameobjects/map.hpp
 CMakeFiles/TicTacToe.dir/src/logiccontroller.cpp.obj: ../src/logiccontroller.cpp
 CMakeFiles/TicTacToe.dir/src/logiccontroller.cpp.obj: ../src/logiccontroller.hpp
 CMakeFiles/TicTacToe.dir/src/logiccontroller.cpp.obj: ../src/sfml.hpp
@@ -313,6 +320,7 @@ CMakeFiles/TicTacToe.dir/src/main.cpp.obj: ../libs/sfml/include/SFML/Window/Wind
 CMakeFiles/TicTacToe.dir/src/main.cpp.obj: ../libs/sfml/include/SFML/Window/WindowStyle.hpp
 CMakeFiles/TicTacToe.dir/src/main.cpp.obj: ../src/drawcontroller.hpp
 CMakeFiles/TicTacToe.dir/src/main.cpp.obj: ../src/gameinfo.hpp
+CMakeFiles/TicTacToe.dir/src/main.cpp.obj: ../src/gameobjects/map.hpp
 CMakeFiles/TicTacToe.dir/src/main.cpp.obj: ../src/logiccontroller.hpp
 CMakeFiles/TicTacToe.dir/src/main.cpp.obj: ../src/main.cpp
 CMakeFiles/TicTacToe.dir/src/main.cpp.obj: ../src/sfml.hpp
