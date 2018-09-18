@@ -7,5 +7,6 @@
 
 #include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
+#include <SFML/Network.hpp>
 
 #endif //TICTACTOE_SFML_HPP

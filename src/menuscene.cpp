@@ -15,18 +15,20 @@ MenuScene::MenuScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
     playHostButton.setPosition({Window::VWIDTH / 2 - buttonTex.getSize().x / 2,
                                 Window::VHEIGHT / 4 - buttonTex.getSize().y / 2});
     playHostButton.setFont(font);
-    playHostButton.setOnclick([]{std::cout << "play as host clicked" << std::endl;});
+    playHostButton.setOnclick([gameInfo]{
+        gameInfo->gamestate = GAME;
+        gameInfo->networkType = HOST;
+    });
 
     playClientButton.setText("Play as Client");
     playClientButton.setTexture(buttonTex);
     playClientButton.setPosition({Window::VWIDTH / 2 - buttonTex.getSize().x / 2,
                                   Window::VHEIGHT / 4.0f*3.0f - buttonTex.getSize().y / 2});
     playClientButton.setFont(font);
-    playClientButton.setOnclick([]{std::cout << "play as client clicked" << std::endl;});
-}
-
-void MenuScene::update(float delta) {
-
+    playClientButton.setOnclick([gameInfo]{
+        gameInfo->gamestate = GAME;
+        gameInfo->networkType = CLIENT;
+    });
 }
 
 void MenuScene::draw(std::shared_ptr<sf::RenderWindow> &window) {

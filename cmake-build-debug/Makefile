@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2017.3.3\bin\cmake\bin\cmake.exe"
+CMAKE_COMMAND = "E:\Programme\CLion 2017.3.3\bin\cmake\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -E remove -f
+RM = "E:\Programme\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe"
+CMAKE_SOURCE_DIR = E:\Thomas\Repositories\TicTacToe
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug"
+CMAKE_BINARY_DIR = E:\Thomas\Repositories\TicTacToe\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacTo
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"E:\Programme\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"E:\Programme\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug\CMakeFiles" "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -121,6 +121,33 @@ TicTacToe: cmake_check_build_system
 TicTacToe/fast:
 	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/build
 .PHONY : TicTacToe/fast
+
+src/animation.obj: src/animation.cpp.obj
+
+.PHONY : src/animation.obj
+
+# target to build an object file
+src/animation.cpp.obj:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/animation.cpp.obj
+.PHONY : src/animation.cpp.obj
+
+src/animation.i: src/animation.cpp.i
+
+.PHONY : src/animation.i
+
+# target to preprocess a source file
+src/animation.cpp.i:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/animation.cpp.i
+.PHONY : src/animation.cpp.i
+
+src/animation.s: src/animation.cpp.s
+
+.PHONY : src/animation.s
+
+# target to generate assembly for a file
+src/animation.cpp.s:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/animation.cpp.s
+.PHONY : src/animation.cpp.s
 
 src/button.obj: src/button.cpp.obj
 
@@ -320,6 +347,9 @@ help:
 	@echo ... TicTacToe
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... src/animation.obj
+	@echo ... src/animation.i
+	@echo ... src/animation.s
 	@echo ... src/button.obj
 	@echo ... src/button.i
 	@echo ... src/button.s

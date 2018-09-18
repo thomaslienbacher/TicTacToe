@@ -7,19 +7,46 @@
 
 #include "sfml.hpp"
 #include "map.hpp"
+#include "eventhandler.hpp"
+#include "gameinfo.hpp"
 #include <memory>
+#include <pthread.h>
 
-class GameScene {
+#define PORT 45302
 
+class GameScene : public EventHandler {
+public:
+    struct Network {
+        pthread_t thread;
+        sf::TcpListener listener;
+        sf::TcpSocket socket;
+        bool networkSetup = false;
+    };
+
+private:
+
+    GameInfo *gameInfo;
     sf::Texture crossTex;
     sf::Texture circleTex;
     sf::Texture layoutTex;
+
+    Network net;
+
     Map map;
 
 public:
+    explicit GameScene(GameInfo *gameInfo);
+
     void update(float delta);
     void draw(std::shared_ptr<sf::RenderWindow>& window);
+
+    void handle(sf::Event event) override;
+
+    Network* getNet();
 };
+
+void *hostControll(void *gameScene);
+void *clientControll(void *gameScene);
 
 
 #endif //TICTACTOE_GAMESCENE_HPP

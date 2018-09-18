@@ -20,9 +20,8 @@ class MenuScene : public EventHandler {
     Button playClientButton;
 
 public:
-    MenuScene(GameInfo *gameInfo);
+    explicit MenuScene(GameInfo *gameInfo);
 
-    void update(float delta);
     void draw(std::shared_ptr<sf::RenderWindow> &window);
     void handle(sf::Event event) override;
 };

@@ -9,20 +9,18 @@ int main() {
 
     Window window("Tic Tac Toe");
 
-    MenuScene menuScene;
-    GameScene gameScene;
+    MenuScene menuScene(&gameInfo);
+    GameScene gameScene(&gameInfo);
 
     window.addEventHandler(&menuScene);
+    window.addEventHandler(&gameScene);
 
     while(window.isRunning()) {
         float delta = window.update();
         //update
 
-        if(gameInfo.gamestate == MENU) {
-            menuScene.update(delta);
-        }
         if(gameInfo.gamestate == GAME) {
-
+            gameScene.update(delta);
         }
 
         window.prepare();
@@ -32,7 +30,7 @@ int main() {
             menuScene.draw(window.getWindow());
         }
         if(gameInfo.gamestate == GAME) {
-
+            gameScene.draw(window.getWindow());
         }
 
         window.display();
