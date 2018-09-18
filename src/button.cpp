@@ -10,8 +10,14 @@ Button::Button(std::string text, sf::Texture texture, sf::Vector2f position, std
 }
 
 void Button::draw(std::shared_ptr<sf::RenderWindow> &window) {
-    if(down) sprite.setScale(DOWN_SCALE, DOWN_SCALE);
-    else sprite.setScale(1, 1);
+    if(down) {
+        sprite.setScale(DOWN_SCALE, DOWN_SCALE);
+        text.setScale(DOWN_SCALE, DOWN_SCALE);
+    }
+    else {
+        sprite.setScale(1, 1);
+        text.setScale(1, 1);
+    }
 
     auto gb = text.getGlobalBounds();
     sprite.setPosition(position.x + sprite.getOrigin().x, position.y + sprite.getOrigin().y);
@@ -27,7 +33,7 @@ void Button::mouseDown(int x, int y) {
 }
 
 void Button::mouseUp(int x, int y) {
-    if(getBounds().contains(x, y)) {
+    if(down && getBounds().contains(x, y)) {
         onclick();
     }
 

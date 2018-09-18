@@ -5,7 +5,6 @@
 #ifndef TICTACTOE_BUTTON_HPP
 #define TICTACTOE_BUTTON_HPP
 
-
 #include <functional>
 #include "sfml.hpp"
 #include <memory>

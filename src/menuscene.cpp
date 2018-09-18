@@ -4,20 +4,23 @@
 
 #include <iostream>
 #include "menuscene.hpp"
+#include "window.hpp"
 
-MenuScene::MenuScene() {
+MenuScene::MenuScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
     buttonTex.loadFromFile("res/button.png");
     font.loadFromFile("res/roboto.ttf");
 
     playHostButton.setText("Play as Host");
     playHostButton.setTexture(buttonTex);
-    playHostButton.setPosition({100, 300});
+    playHostButton.setPosition({Window::VWIDTH / 2 - buttonTex.getSize().x / 2,
+                                Window::VHEIGHT / 4 - buttonTex.getSize().y / 2});
     playHostButton.setFont(font);
     playHostButton.setOnclick([]{std::cout << "play as host clicked" << std::endl;});
 
     playClientButton.setText("Play as Client");
     playClientButton.setTexture(buttonTex);
-    playClientButton.setPosition({100, 100});
+    playClientButton.setPosition({Window::VWIDTH / 2 - buttonTex.getSize().x / 2,
+                                  Window::VHEIGHT / 4.0f*3.0f - buttonTex.getSize().y / 2});
     playClientButton.setFont(font);
     playClientButton.setOnclick([]{std::cout << "play as client clicked" << std::endl;});
 }

@@ -1,13 +1,13 @@
 #include "window.hpp"
 #include "gamescene.hpp"
 #include "menuscene.hpp"
-
-enum State {MENU, GAME};
+#include "gameinfo.hpp"
 
 int main() {
-    State gamestate = MENU;
-    Window window("Tic Tac Toe");
+    GameInfo gameInfo;
+    gameInfo.gamestate = MENU;
 
+    Window window("Tic Tac Toe");
 
     MenuScene menuScene;
     GameScene gameScene;
@@ -18,20 +18,20 @@ int main() {
         float delta = window.update();
         //update
 
-        if(gamestate == MENU) {
+        if(gameInfo.gamestate == MENU) {
             menuScene.update(delta);
         }
-        if(gamestate == GAME) {
+        if(gameInfo.gamestate == GAME) {
 
         }
 
         window.prepare();
         //render
 
-        if(gamestate == MENU) {
+        if(gameInfo.gamestate == MENU) {
             menuScene.draw(window.getWindow());
         }
-        if(gamestate == GAME) {
+        if(gameInfo.gamestate == GAME) {
 
         }
 

@@ -401,6 +401,7 @@ CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj: ../src/eventhandler.hpp
 CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj: ../src/menuscene.cpp
 CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj: ../src/menuscene.hpp
 CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj: ../src/sfml.hpp
+CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj: ../src/window.hpp
 
 CMakeFiles/TicTacToe.dir/src/window.cpp.obj: ../libs/sfml/include/SFML/Config.hpp
 CMakeFiles/TicTacToe.dir/src/window.cpp.obj: ../libs/sfml/include/SFML/Graphics.hpp
