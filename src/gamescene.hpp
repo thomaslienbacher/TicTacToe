@@ -9,6 +9,7 @@
 #include "map.hpp"
 #include "eventhandler.hpp"
 #include "gameinfo.hpp"
+#include "animation.hpp"
 #include <memory>
 #include <pthread.h>
 
@@ -20,7 +21,7 @@ public:
         pthread_t thread;
         sf::TcpListener listener;
         sf::TcpSocket socket;
-        bool networkSetup = false;
+        enum {SETUP, LOADING, CONNECTED} state = SETUP;
     };
 
 private:
@@ -29,9 +30,10 @@ private:
     sf::Texture crossTex;
     sf::Texture circleTex;
     sf::Texture layoutTex;
+    sf::Texture loadAnimTex;
 
+    Animation loadingAnimation;
     Network net;
-
     Map map;
 
 public:

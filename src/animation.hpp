@@ -25,7 +25,7 @@ public:
 
     void setFps(float fps);
     void setTexture(sf::Texture &texture, int rows, int cols);
-    void setPosition(sf::Vector2f &pos);
+    void setPosition(sf::Vector2f pos);
 
     void update(float delta);
     void draw(std::shared_ptr<sf::RenderWindow>& window);

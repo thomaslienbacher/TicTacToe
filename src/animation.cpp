@@ -32,12 +32,12 @@ void Animation::setFps(float fps) {
 
 void Animation::setTexture(sf::Texture &texture, int rows, int cols) {
     sprite.setTexture(texture);
-    int w = texture.getSize().x / rows;
-    int h = texture.getSize().y / cols;
+    int w = (int)texture.getSize().x / cols;
+    int h = (int)texture.getSize().y / rows;
 
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
-            regions.emplace_back({w * i, h * j, w, h});
+            regions.push_back({w * j, h * i, w, h});
         }
     }
 
@@ -46,6 +46,6 @@ void Animation::setTexture(sf::Texture &texture, int rows, int cols) {
     time = 0;
 }
 
-void Animation::setPosition(sf::Vector2f &pos) {
+void Animation::setPosition(sf::Vector2f pos) {
     sprite.setPosition(pos);
 }

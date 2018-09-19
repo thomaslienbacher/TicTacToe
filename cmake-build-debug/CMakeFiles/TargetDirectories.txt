@@ -1,3 +1,3 @@
-E:/Thomas/Repositories/TicTacToe/cmake-build-debug/CMakeFiles/TicTacToe.dir
-E:/Thomas/Repositories/TicTacToe/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/Thomas/Repositories/TicTacToe/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Eigene Dateien/Programmieren/C++/CLion-Workspace/TicTacToe/cmake-build-debug/CMakeFiles/TicTacToe.dir
+C:/Eigene Dateien/Programmieren/C++/CLion-Workspace/TicTacToe/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Eigene Dateien/Programmieren/C++/CLion-Workspace/TicTacToe/cmake-build-debug/CMakeFiles/rebuild_cache.dir

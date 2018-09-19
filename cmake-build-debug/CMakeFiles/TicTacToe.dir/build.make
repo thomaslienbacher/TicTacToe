@@ -33,19 +33,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "E:\Programme\CLion 2017.3.3\bin\cmake\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2017.3.3\bin\cmake\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "E:\Programme\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = E:\Thomas\Repositories\TicTacToe
+CMAKE_SOURCE_DIR = "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = E:\Thomas\Repositories\TicTacToe\cmake-build-debug
+CMAKE_BINARY_DIR = "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/TicTacToe.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/TicTacToe.dir/flags.make
 CMakeFiles/TicTacToe.dir/src/main.cpp.obj: CMakeFiles/TicTacToe.dir/flags.make
 CMakeFiles/TicTacToe.dir/src/main.cpp.obj: CMakeFiles/TicTacToe.dir/includes_CXX.rsp
 CMakeFiles/TicTacToe.dir/src/main.cpp.obj: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TicTacToe.dir/src/main.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TicTacToe.dir\src\main.cpp.obj -c E:\Thomas\Repositories\TicTacToe\src\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TicTacToe.dir/src/main.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TicTacToe.dir\src\main.cpp.obj -c "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\main.cpp"
 
 CMakeFiles/TicTacToe.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TicTacToe.dir/src/main.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Thomas\Repositories\TicTacToe\src\main.cpp > CMakeFiles\TicTacToe.dir\src\main.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\main.cpp" > CMakeFiles\TicTacToe.dir\src\main.cpp.i
 
 CMakeFiles/TicTacToe.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TicTacToe.dir/src/main.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Thomas\Repositories\TicTacToe\src\main.cpp -o CMakeFiles\TicTacToe.dir\src\main.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\main.cpp" -o CMakeFiles\TicTacToe.dir\src\main.cpp.s
 
 CMakeFiles/TicTacToe.dir/src/main.cpp.obj.requires:
 
@@ -84,16 +84,16 @@ CMakeFiles/TicTacToe.dir/src/main.cpp.obj.provides.build: CMakeFiles/TicTacToe.d
 CMakeFiles/TicTacToe.dir/src/window.cpp.obj: CMakeFiles/TicTacToe.dir/flags.make
 CMakeFiles/TicTacToe.dir/src/window.cpp.obj: CMakeFiles/TicTacToe.dir/includes_CXX.rsp
 CMakeFiles/TicTacToe.dir/src/window.cpp.obj: ../src/window.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TicTacToe.dir/src/window.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TicTacToe.dir\src\window.cpp.obj -c E:\Thomas\Repositories\TicTacToe\src\window.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TicTacToe.dir/src/window.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TicTacToe.dir\src\window.cpp.obj -c "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\window.cpp"
 
 CMakeFiles/TicTacToe.dir/src/window.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TicTacToe.dir/src/window.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Thomas\Repositories\TicTacToe\src\window.cpp > CMakeFiles\TicTacToe.dir\src\window.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\window.cpp" > CMakeFiles\TicTacToe.dir\src\window.cpp.i
 
 CMakeFiles/TicTacToe.dir/src/window.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TicTacToe.dir/src/window.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Thomas\Repositories\TicTacToe\src\window.cpp -o CMakeFiles\TicTacToe.dir\src\window.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\window.cpp" -o CMakeFiles\TicTacToe.dir\src\window.cpp.s
 
 CMakeFiles/TicTacToe.dir/src/window.cpp.obj.requires:
 
@@ -109,16 +109,16 @@ CMakeFiles/TicTacToe.dir/src/window.cpp.obj.provides.build: CMakeFiles/TicTacToe
 CMakeFiles/TicTacToe.dir/src/map.cpp.obj: CMakeFiles/TicTacToe.dir/flags.make
 CMakeFiles/TicTacToe.dir/src/map.cpp.obj: CMakeFiles/TicTacToe.dir/includes_CXX.rsp
 CMakeFiles/TicTacToe.dir/src/map.cpp.obj: ../src/map.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TicTacToe.dir/src/map.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TicTacToe.dir\src\map.cpp.obj -c E:\Thomas\Repositories\TicTacToe\src\map.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TicTacToe.dir/src/map.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TicTacToe.dir\src\map.cpp.obj -c "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\map.cpp"
 
 CMakeFiles/TicTacToe.dir/src/map.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TicTacToe.dir/src/map.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Thomas\Repositories\TicTacToe\src\map.cpp > CMakeFiles\TicTacToe.dir\src\map.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\map.cpp" > CMakeFiles\TicTacToe.dir\src\map.cpp.i
 
 CMakeFiles/TicTacToe.dir/src/map.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TicTacToe.dir/src/map.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Thomas\Repositories\TicTacToe\src\map.cpp -o CMakeFiles\TicTacToe.dir\src\map.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\map.cpp" -o CMakeFiles\TicTacToe.dir\src\map.cpp.s
 
 CMakeFiles/TicTacToe.dir/src/map.cpp.obj.requires:
 
@@ -134,16 +134,16 @@ CMakeFiles/TicTacToe.dir/src/map.cpp.obj.provides.build: CMakeFiles/TicTacToe.di
 CMakeFiles/TicTacToe.dir/src/button.cpp.obj: CMakeFiles/TicTacToe.dir/flags.make
 CMakeFiles/TicTacToe.dir/src/button.cpp.obj: CMakeFiles/TicTacToe.dir/includes_CXX.rsp
 CMakeFiles/TicTacToe.dir/src/button.cpp.obj: ../src/button.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TicTacToe.dir/src/button.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TicTacToe.dir\src\button.cpp.obj -c E:\Thomas\Repositories\TicTacToe\src\button.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TicTacToe.dir/src/button.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TicTacToe.dir\src\button.cpp.obj -c "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\button.cpp"
 
 CMakeFiles/TicTacToe.dir/src/button.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TicTacToe.dir/src/button.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Thomas\Repositories\TicTacToe\src\button.cpp > CMakeFiles\TicTacToe.dir\src\button.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\button.cpp" > CMakeFiles\TicTacToe.dir\src\button.cpp.i
 
 CMakeFiles/TicTacToe.dir/src/button.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TicTacToe.dir/src/button.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Thomas\Repositories\TicTacToe\src\button.cpp -o CMakeFiles\TicTacToe.dir\src\button.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\button.cpp" -o CMakeFiles\TicTacToe.dir\src\button.cpp.s
 
 CMakeFiles/TicTacToe.dir/src/button.cpp.obj.requires:
 
@@ -159,16 +159,16 @@ CMakeFiles/TicTacToe.dir/src/button.cpp.obj.provides.build: CMakeFiles/TicTacToe
 CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj: CMakeFiles/TicTacToe.dir/flags.make
 CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj: CMakeFiles/TicTacToe.dir/includes_CXX.rsp
 CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj: ../src/gamescene.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TicTacToe.dir\src\gamescene.cpp.obj -c E:\Thomas\Repositories\TicTacToe\src\gamescene.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TicTacToe.dir\src\gamescene.cpp.obj -c "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\gamescene.cpp"
 
 CMakeFiles/TicTacToe.dir/src/gamescene.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TicTacToe.dir/src/gamescene.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Thomas\Repositories\TicTacToe\src\gamescene.cpp > CMakeFiles\TicTacToe.dir\src\gamescene.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\gamescene.cpp" > CMakeFiles\TicTacToe.dir\src\gamescene.cpp.i
 
 CMakeFiles/TicTacToe.dir/src/gamescene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TicTacToe.dir/src/gamescene.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Thomas\Repositories\TicTacToe\src\gamescene.cpp -o CMakeFiles\TicTacToe.dir\src\gamescene.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\gamescene.cpp" -o CMakeFiles\TicTacToe.dir\src\gamescene.cpp.s
 
 CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj.requires:
 
@@ -184,16 +184,16 @@ CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj.provides.build: CMakeFiles/TicTac
 CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj: CMakeFiles/TicTacToe.dir/flags.make
 CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj: CMakeFiles/TicTacToe.dir/includes_CXX.rsp
 CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj: ../src/menuscene.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TicTacToe.dir\src\menuscene.cpp.obj -c E:\Thomas\Repositories\TicTacToe\src\menuscene.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TicTacToe.dir\src\menuscene.cpp.obj -c "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\menuscene.cpp"
 
 CMakeFiles/TicTacToe.dir/src/menuscene.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TicTacToe.dir/src/menuscene.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Thomas\Repositories\TicTacToe\src\menuscene.cpp > CMakeFiles\TicTacToe.dir\src\menuscene.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\menuscene.cpp" > CMakeFiles\TicTacToe.dir\src\menuscene.cpp.i
 
 CMakeFiles/TicTacToe.dir/src/menuscene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TicTacToe.dir/src/menuscene.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Thomas\Repositories\TicTacToe\src\menuscene.cpp -o CMakeFiles\TicTacToe.dir\src\menuscene.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\menuscene.cpp" -o CMakeFiles\TicTacToe.dir\src\menuscene.cpp.s
 
 CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj.requires:
 
@@ -209,16 +209,16 @@ CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj.provides.build: CMakeFiles/TicTac
 CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj: CMakeFiles/TicTacToe.dir/flags.make
 CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj: CMakeFiles/TicTacToe.dir/includes_CXX.rsp
 CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj: ../src/eventhandler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TicTacToe.dir\src\eventhandler.cpp.obj -c E:\Thomas\Repositories\TicTacToe\src\eventhandler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TicTacToe.dir\src\eventhandler.cpp.obj -c "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\eventhandler.cpp"
 
 CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Thomas\Repositories\TicTacToe\src\eventhandler.cpp > CMakeFiles\TicTacToe.dir\src\eventhandler.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\eventhandler.cpp" > CMakeFiles\TicTacToe.dir\src\eventhandler.cpp.i
 
 CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Thomas\Repositories\TicTacToe\src\eventhandler.cpp -o CMakeFiles\TicTacToe.dir\src\eventhandler.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\eventhandler.cpp" -o CMakeFiles\TicTacToe.dir\src\eventhandler.cpp.s
 
 CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj.requires:
 
@@ -234,16 +234,16 @@ CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj.provides.build: CMakeFiles/Tic
 CMakeFiles/TicTacToe.dir/src/animation.cpp.obj: CMakeFiles/TicTacToe.dir/flags.make
 CMakeFiles/TicTacToe.dir/src/animation.cpp.obj: CMakeFiles/TicTacToe.dir/includes_CXX.rsp
 CMakeFiles/TicTacToe.dir/src/animation.cpp.obj: ../src/animation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TicTacToe.dir/src/animation.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TicTacToe.dir\src\animation.cpp.obj -c E:\Thomas\Repositories\TicTacToe\src\animation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TicTacToe.dir/src/animation.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TicTacToe.dir\src\animation.cpp.obj -c "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\animation.cpp"
 
 CMakeFiles/TicTacToe.dir/src/animation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TicTacToe.dir/src/animation.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Thomas\Repositories\TicTacToe\src\animation.cpp > CMakeFiles\TicTacToe.dir\src\animation.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\animation.cpp" > CMakeFiles\TicTacToe.dir\src\animation.cpp.i
 
 CMakeFiles/TicTacToe.dir/src/animation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TicTacToe.dir/src/animation.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Thomas\Repositories\TicTacToe\src\animation.cpp -o CMakeFiles\TicTacToe.dir\src\animation.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\src\animation.cpp" -o CMakeFiles\TicTacToe.dir\src\animation.cpp.s
 
 CMakeFiles/TicTacToe.dir/src/animation.cpp.obj.requires:
 
@@ -298,7 +298,7 @@ TicTacToe.exe: ../libs/sfml/libsfml-graphics.a
 TicTacToe.exe: CMakeFiles/TicTacToe.dir/linklibs.rsp
 TicTacToe.exe: CMakeFiles/TicTacToe.dir/objects1.rsp
 TicTacToe.exe: CMakeFiles/TicTacToe.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable TicTacToe.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable TicTacToe.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\TicTacToe.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -322,6 +322,6 @@ CMakeFiles/TicTacToe.dir/clean:
 .PHONY : CMakeFiles/TicTacToe.dir/clean
 
 CMakeFiles/TicTacToe.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" E:\Thomas\Repositories\TicTacToe E:\Thomas\Repositories\TicTacToe E:\Thomas\Repositories\TicTacToe\cmake-build-debug E:\Thomas\Repositories\TicTacToe\cmake-build-debug E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles\TicTacToe.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe" "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe" "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug" "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug" "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug\CMakeFiles\TicTacToe.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/TicTacToe.dir/depend
 
