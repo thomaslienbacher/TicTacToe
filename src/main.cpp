@@ -15,6 +15,8 @@ int main() {
     window.addEventHandler(&menuScene);
     window.addEventHandler(&gameScene);
 
+    gameInfo.font.loadFromFile("res/roboto.ttf");
+
     while(window.isRunning()) {
         float delta = window.update();
         //update

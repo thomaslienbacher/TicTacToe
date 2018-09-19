@@ -17,10 +17,12 @@
 
 class GameScene : public EventHandler {
 public:
+
     struct Network {
         pthread_t thread;
         sf::TcpListener listener;
         sf::TcpSocket socket;
+        std::string ip;
         enum {SETUP, LOADING, CONNECTED} state = SETUP;
     };
 
@@ -32,7 +34,7 @@ private:
     sf::Texture layoutTex;
     sf::Texture loadAnimTex;
 
-    Animation loadingAnimation;
+    sf::Sprite loadAnim;
     Network net;
     Map map;
 

@@ -7,11 +7,13 @@
 #include "window.hpp"
 
 GameScene::GameScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
-    loadAnimTex.loadFromFile("res/explosion.png");
+    loadAnimTex.loadFromFile("res/load_circle.png");
+    loadAnimTex.setSmooth(true);
 
-    loadingAnimation.setFps(10.5f);
-    loadingAnimation.setTexture(loadAnimTex, 2, 4);
-    loadingAnimation.setPosition({Window::VWIDTH / 3, Window::VHEIGHT / 3});
+    loadAnim.setPosition(Window::VWIDTH / 2, Window::VHEIGHT / 2);
+    loadAnim.setTexture(loadAnimTex, true);
+    const sf::IntRect &ir = loadAnim.getTextureRect();
+    loadAnim.setOrigin(ir.width / 2, ir.height / 2);
 }
 
 void GameScene::update(float delta) {
@@ -27,14 +29,34 @@ void GameScene::update(float delta) {
         net.state = Network::LOADING;
     }
 
-    if(net.state == Network::LOADING) {
-        loadingAnimation.update(delta);
+    if (net.state == Network::LOADING) {
+        loadAnim.rotate(210.0f * delta);
     }
 }
 
 void GameScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
-    if(net.state == Network::LOADING) {
-        loadingAnimation.draw(window);
+    if (net.state == Network::LOADING) {
+        window->draw(loadAnim);
+
+        static sf::Text loadText("Waiting for connection...", gameInfo->font);
+
+        loadText.setPosition(Window::VWIDTH / 2, Window::VHEIGHT / 2 + 100);
+        auto ir = loadText.getLocalBounds();
+        loadText.setOrigin(ir.width / 2, ir.height / 2);
+        loadText.setFillColor(sf::Color::Black);
+
+        window->draw(loadText);
+    }
+
+    if (net.state == Network::CONNECTED) {
+        static sf::Text title("Tic Tac Toe", gameInfo->font, 25);
+
+        title.setPosition(Window::VWIDTH / 2, 40);
+        auto ir = title.getLocalBounds();
+        title.setOrigin(ir.width / 2, ir.height / 2);
+        title.setFillColor(sf::Color::Black);
+
+        window->draw(title);
     }
 }
 
@@ -42,29 +64,31 @@ void GameScene::handle(sf::Event event) {
 
 }
 
-GameScene::Network* GameScene::getNet() {
+GameScene::Network *GameScene::getNet() {
     return &net;
 }
 
 void *hostControll(void *gameScene) {
-    GameScene::Network *net = ((GameScene*) gameScene)->getNet();
+    GameScene::Network *net = ((GameScene *) gameScene)->getNet();
     net->listener.listen(PORT);
 
     if (net->listener.accept(net->socket) == sf::Socket::Done) {
-        std::cout << "found one" << std::endl;
         net->state = GameScene::Network::CONNECTED;
     } else {
-        std::cout << "looking" << std::endl;
+        std::cout << "didnt accept" << std::endl;
     }
 }
 
 void *clientControll(void *gameScene) {
-    GameScene::Network *net = ((GameScene*) gameScene)->getNet();
+    GameScene::Network *net = ((GameScene *) gameScene)->getNet();
 
-    if (net->socket.connect("127.0.0.1", PORT) == sf::Socket::Done) {
-        std::cout << "connected" << std::endl;
-        net->state = GameScene::Network::CONNECTED;
-    } else {
-        std::cout << "not connected" << std::endl;
+    while (net->state != GameScene::Network::CONNECTED) {
+        if (net->socket.connect("127.0.0.1", PORT) == sf::Socket::Done) {
+            net->state = GameScene::Network::CONNECTED;
+        } else {
+            std::cout << "didnt connect" << std::endl;
+        }
+
+        sf::sleep(sf::milliseconds(200));
     }
 }

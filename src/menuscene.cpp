@@ -8,13 +8,12 @@
 
 MenuScene::MenuScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
     buttonTex.loadFromFile("res/button.png");
-    font.loadFromFile("res/roboto.ttf");
 
     playHostButton.setText("Play as Host");
     playHostButton.setTexture(buttonTex);
     playHostButton.setPosition({Window::VWIDTH / 2 - buttonTex.getSize().x / 2,
                                 Window::VHEIGHT / 4 - buttonTex.getSize().y / 2});
-    playHostButton.setFont(font);
+    playHostButton.setFont(gameInfo->font);
     playHostButton.setOnclick([gameInfo]{
         gameInfo->gamestate = GAME;
         gameInfo->networkType = HOST;
@@ -24,7 +23,7 @@ MenuScene::MenuScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
     playClientButton.setTexture(buttonTex);
     playClientButton.setPosition({Window::VWIDTH / 2 - buttonTex.getSize().x / 2,
                                   Window::VHEIGHT / 4.0f*3.0f - buttonTex.getSize().y / 2});
-    playClientButton.setFont(font);
+    playClientButton.setFont(gameInfo->font);
     playClientButton.setOnclick([gameInfo]{
         gameInfo->gamestate = GAME;
         gameInfo->networkType = CLIENT;

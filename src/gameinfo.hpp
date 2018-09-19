@@ -12,6 +12,7 @@ enum NetworkType {HOST, CLIENT};
 struct GameInfo {
     State gamestate;
     NetworkType networkType;
+    sf::Font font;
 };
 
 

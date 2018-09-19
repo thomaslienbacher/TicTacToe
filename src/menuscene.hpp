@@ -15,7 +15,6 @@ class MenuScene : public EventHandler {
 
     GameInfo *gameInfo;
     sf::Texture buttonTex;
-    sf::Font font;
     Button playHostButton;
     Button playClientButton;
 
