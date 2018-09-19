@@ -11,7 +11,7 @@ Window::Window(std::string title){
     window = std::make_shared<sf::RenderWindow>(sf::VideoMode(VWIDTH, VHEIGHT), title,
                                   sf::Style::Close, sf::ContextSettings(8,0,4,3,3));
 
-    window->setFramerateLimit(30);
+    window->setFramerateLimit(60);
     window->setVerticalSyncEnabled(true);
 
     sf::Image icon;

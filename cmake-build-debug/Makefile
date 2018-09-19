@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2017.3.3\bin\cmake\bin\cmake.exe"
+CMAKE_COMMAND = "E:\Programme\CLion 2017.3.3\bin\cmake\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -E remove -f
+RM = "E:\Programme\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe"
+CMAKE_SOURCE_DIR = E:\Thomas\Repositories\TicTacToe
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug"
+CMAKE_BINARY_DIR = E:\Thomas\Repositories\TicTacToe\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacTo
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"E:\Programme\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"E:\Programme\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug\CMakeFiles" "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -311,6 +311,33 @@ src/menuscene.cpp.s:
 	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/menuscene.cpp.s
 .PHONY : src/menuscene.cpp.s
 
+src/textinput.obj: src/textinput.cpp.obj
+
+.PHONY : src/textinput.obj
+
+# target to build an object file
+src/textinput.cpp.obj:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/textinput.cpp.obj
+.PHONY : src/textinput.cpp.obj
+
+src/textinput.i: src/textinput.cpp.i
+
+.PHONY : src/textinput.i
+
+# target to preprocess a source file
+src/textinput.cpp.i:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/textinput.cpp.i
+.PHONY : src/textinput.cpp.i
+
+src/textinput.s: src/textinput.cpp.s
+
+.PHONY : src/textinput.s
+
+# target to generate assembly for a file
+src/textinput.cpp.s:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/textinput.cpp.s
+.PHONY : src/textinput.cpp.s
+
 src/window.obj: src/window.cpp.obj
 
 .PHONY : src/window.obj
@@ -368,6 +395,9 @@ help:
 	@echo ... src/menuscene.obj
 	@echo ... src/menuscene.i
 	@echo ... src/menuscene.s
+	@echo ... src/textinput.obj
+	@echo ... src/textinput.i
+	@echo ... src/textinput.s
 	@echo ... src/window.obj
 	@echo ... src/window.i
 	@echo ... src/window.s

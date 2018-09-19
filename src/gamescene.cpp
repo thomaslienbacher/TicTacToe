@@ -10,13 +10,33 @@ GameScene::GameScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
     loadAnimTex.loadFromFile("res/load_circle.png");
     loadAnimTex.setSmooth(true);
 
+    ipInput.setFont(gameInfo->font);
+    ipInput.setSize({Window::VWIDTH / 2 - 200, Window::VHEIGHT / 2, 400, 60});
+    ipInput.setMaxchars(21);
+
     loadAnim.setPosition(Window::VWIDTH / 2, Window::VHEIGHT / 2);
     loadAnim.setTexture(loadAnimTex, true);
     const sf::IntRect &ir = loadAnim.getTextureRect();
     loadAnim.setOrigin(ir.width / 2, ir.height / 2);
+
+    net.state = Network::IDLE;
 }
 
 void GameScene::update(float delta) {
+    if(net.state == Network::IDLE) {
+        if(gameInfo->networkType == HOST) net.state = Network::SETUP;
+        if(gameInfo->networkType == CLIENT) net.state = Network::GATHERING_INFO;
+    }
+
+    if(net.state == Network::GATHERING_INFO) {
+        ipInput.update(delta);
+
+        if(ipInput.isEntered()) {
+            net.state = Network::SETUP;
+            net.ip = ipInput.getInput();
+        }
+    }
+
     if (net.state == Network::SETUP) {
         if (gameInfo->networkType == HOST) {
             pthread_create(&net.thread, NULL, hostControll, this);
@@ -30,11 +50,24 @@ void GameScene::update(float delta) {
     }
 
     if (net.state == Network::LOADING) {
-        loadAnim.rotate(210.0f * delta);
+        loadAnim.rotate(200.0f * delta);
     }
 }
 
 void GameScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
+    if(net.state == Network::GATHERING_INFO) {
+        static sf::Text ipText("Enter IP Address", gameInfo->font);
+
+        ipText.setPosition(Window::VWIDTH / 2, Window::VHEIGHT / 2 - 50);
+        auto ir = ipText.getLocalBounds();
+        ipText.setOrigin(ir.width / 2, ir.height / 2);
+        ipText.setFillColor(sf::Color::Black);
+
+        window->draw(ipText);
+
+        ipInput.draw(window);
+    }
+
     if (net.state == Network::LOADING) {
         window->draw(loadAnim);
 
@@ -61,7 +94,9 @@ void GameScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
 }
 
 void GameScene::handle(sf::Event event) {
-
+    if(net.state == Network::GATHERING_INFO) {
+        ipInput.handle(event);
+    }
 }
 
 GameScene::Network *GameScene::getNet() {
@@ -83,7 +118,7 @@ void *clientControll(void *gameScene) {
     GameScene::Network *net = ((GameScene *) gameScene)->getNet();
 
     while (net->state != GameScene::Network::CONNECTED) {
-        if (net->socket.connect("127.0.0.1", PORT) == sf::Socket::Done) {
+        if (net->socket.connect(net->ip, PORT) == sf::Socket::Done) {
             net->state = GameScene::Network::CONNECTED;
         } else {
             std::cout << "didnt connect" << std::endl;

@@ -10,6 +10,7 @@
 #include "eventhandler.hpp"
 #include "gameinfo.hpp"
 #include "animation.hpp"
+#include "textinput.hpp"
 #include <memory>
 #include <pthread.h>
 
@@ -23,7 +24,7 @@ public:
         sf::TcpListener listener;
         sf::TcpSocket socket;
         std::string ip;
-        enum {SETUP, LOADING, CONNECTED} state = SETUP;
+        enum {IDLE, GATHERING_INFO, SETUP, LOADING, CONNECTED} state;
     };
 
 private:
@@ -34,6 +35,7 @@ private:
     sf::Texture layoutTex;
     sf::Texture loadAnimTex;
 
+    TextInput ipInput;
     sf::Sprite loadAnim;
     Network net;
     Map map;
