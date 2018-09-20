@@ -33,6 +33,7 @@ private:
     sf::Texture crossTex;
     sf::Texture circleTex;
     sf::Texture layoutTex;
+    sf::Sprite layout;
     sf::Texture loadAnimTex;
 
     TextInput ipInput;

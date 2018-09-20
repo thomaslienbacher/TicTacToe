@@ -19,6 +19,13 @@ GameScene::GameScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
     const sf::IntRect &ir = loadAnim.getTextureRect();
     loadAnim.setOrigin(ir.width / 2, ir.height / 2);
 
+
+    layoutTex.loadFromFile("res/layout.png");
+    layout.setTexture(layoutTex, false);
+    auto sr = layoutTex.getSize();
+    layout.setOrigin(sr.x / 2, sr.y / 2);
+    layout.setPosition(Window::VWIDTH / 2, Window::VHEIGHT / 2 + 30);
+
     net.state = Network::IDLE;
 }
 
@@ -52,6 +59,10 @@ void GameScene::update(float delta) {
     if (net.state == Network::LOADING) {
         loadAnim.rotate(200.0f * delta);
     }
+
+    if (net.state == Network::CONNECTED) {
+
+    }
 }
 
 void GameScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
@@ -84,12 +95,13 @@ void GameScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
     if (net.state == Network::CONNECTED) {
         static sf::Text title("Tic Tac Toe", gameInfo->font, 25);
 
-        title.setPosition(Window::VWIDTH / 2, 40);
+        title.setPosition(Window::VWIDTH / 2, 20);
         auto ir = title.getLocalBounds();
         title.setOrigin(ir.width / 2, ir.height / 2);
         title.setFillColor(sf::Color::Black);
 
         window->draw(title);
+        window->draw(layout);
     }
 }
 

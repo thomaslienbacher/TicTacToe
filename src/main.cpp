@@ -1,8 +1,10 @@
+//#include <windows.h>
 #include "window.hpp"
 #include "gamescene.hpp"
 #include "menuscene.hpp"
 #include "gameinfo.hpp"
 
+//int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
 int main() {
     GameInfo gameInfo;
     gameInfo.gamestate = MENU;
