@@ -11,8 +11,8 @@ class Map {
     char map[3][3];
 
 public:
-    static constexpr char C_CROSS = 'x';
-    static constexpr char C_CIRCLE = 'o';
+    static constexpr char C_CROSS = 'X';
+    static constexpr char C_CIRCLE = 'O';
 
     Map();
 

@@ -11,8 +11,7 @@ MenuScene::MenuScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
 
     playHostButton.setText("Play as Host");
     playHostButton.setTexture(buttonTex);
-    playHostButton.setPosition({Window::VWIDTH / 2 - buttonTex.getSize().x / 2,
-                                Window::VHEIGHT / 4 - buttonTex.getSize().y / 2});
+    playHostButton.setPosition({Window::VWIDTH / 2, Window::VHEIGHT / 4});
     playHostButton.setFont(gameInfo->font);
     playHostButton.setOnclick([gameInfo]{
         gameInfo->gamestate = GAME;
@@ -21,8 +20,7 @@ MenuScene::MenuScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
 
     playClientButton.setText("Play as Client");
     playClientButton.setTexture(buttonTex);
-    playClientButton.setPosition({Window::VWIDTH / 2 - buttonTex.getSize().x / 2,
-                                  Window::VHEIGHT / 4.0f*3.0f - buttonTex.getSize().y / 2});
+    playClientButton.setPosition({Window::VWIDTH / 2, Window::VHEIGHT / 4.0f*3.0f});
     playClientButton.setFont(gameInfo->font);
     playClientButton.setOnclick([gameInfo]{
         gameInfo->gamestate = GAME;

@@ -20,8 +20,8 @@ void Button::draw(std::shared_ptr<sf::RenderWindow> &window) {
     }
 
     auto gb = text.getGlobalBounds();
-    sprite.setPosition(position.x + sprite.getOrigin().x, position.y + sprite.getOrigin().y);
-    text.setPosition(position.x + sprite.getOrigin().x - gb.width / 2, position.y + sprite.getOrigin().y - gb.height / 2);
+    sprite.setPosition(position.x, position.y);
+    text.setPosition(position.x- gb.width / 2, position.y - gb.height / 2);
     text.setFillColor(sf::Color::Black);
 
     window->draw(sprite);
@@ -60,7 +60,7 @@ void Button::setTexture(const sf::Texture &texture) {
 
 const sf::FloatRect Button::getBounds() const {
     const sf::IntRect& ir = sprite.getTextureRect();
-    return {position.x, position.y, ir.width, ir.height};
+    return {position.x - sprite.getOrigin().x, position.y - sprite.getOrigin().y, ir.width, ir.height};
 }
 
 const std::function<void()> &Button::getOnclick() const {

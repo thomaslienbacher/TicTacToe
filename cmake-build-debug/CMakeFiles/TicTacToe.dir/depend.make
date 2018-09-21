@@ -358,6 +358,7 @@ CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj: ../libs/sfml/include/SFML/Window
 CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj: ../libs/sfml/include/SFML/Window/WindowHandle.hpp
 CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj: ../libs/sfml/include/SFML/Window/WindowStyle.hpp
 CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj: ../src/animation.hpp
+CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj: ../src/button.hpp
 CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj: ../src/eventhandler.hpp
 CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj: ../src/gameinfo.hpp
 CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj: ../src/gamescene.cpp

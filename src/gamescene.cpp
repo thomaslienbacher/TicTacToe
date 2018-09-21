@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <sstream>
 #include "gamescene.hpp"
 #include "window.hpp"
 
@@ -32,11 +33,24 @@ GameScene::GameScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
     circleTex.setSmooth(true);
 
     net.state = Network::IDLE;
-
     player = Map::C_CROSS;
+    moveMade = false;
 
-    moveMade = true;
-    toPlace = {1, 2};
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 3; ++j) {
+            auto sr = crossTex.getSize();
+
+            mapButtons[i][j].setTexture(crossTex);
+            mapButtons[i][j].setPosition({(float)i * (layoutTex.getSize().x / 3.0f + 3.0f) + layout.getPosition().x - layout.getOrigin().x + sr.x / 2,
+                                          (float)j * (layoutTex.getSize().y / 3.0f + 3.0f) + layout.getPosition().y - layout.getOrigin().y + sr.y / 2});
+            mapButtons[i][j].setOnclick([i, j, this] {
+                if (this->player == this->me && !map.getAt(i, j)) {
+                    moveMade = true;
+                    toPlace = {i, j};
+                }
+            });
+        }
+    }
 }
 
 void GameScene::update(float delta) {
@@ -57,10 +71,12 @@ void GameScene::update(float delta) {
     if (net.state == Network::SETUP) {
         if (gameInfo->networkType == HOST) {
             pthread_create(&net.thread, NULL, hostControll, this);
+            me = Map::C_CROSS;
         }
 
         if (gameInfo->networkType == CLIENT) {
             pthread_create(&net.thread, NULL, clientControll, this);
+            me = Map::C_CIRCLE;
         }
 
         net.state = Network::LOADING;
@@ -71,38 +87,29 @@ void GameScene::update(float delta) {
     }
 
     if (net.state == Network::CONNECTED) {
-        if (gameInfo->networkType == HOST) {
-            sf::Packet packet;
-            if (net.socket.receive(packet) == sf::Socket::Status::Done) {
-                int x, y;
+        if(moveMade) {
+            sf::Packet sndPacket;
+            sndPacket << toPlace.x;
+            sndPacket << toPlace.y;
+            sndPacket.endOfPacket();
+            net.socket.send(sndPacket);
+            map.setAt(toPlace.x, toPlace.y, player);
 
-                packet >> x;
-                packet >> y;
+            if(player == Map::C_CROSS) player = Map::C_CIRCLE;
+            else if(player == Map::C_CIRCLE) player = Map::C_CROSS;
 
-                map.setAt(x, y, player);
-            }
+            moveMade = false;
         }
 
-        if (gameInfo->networkType == CLIENT) {
-            if(moveMade) {
-                sf::Packet sndPacket;
-                sndPacket << toPlace.x;
-                sndPacket << toPlace.y;
-                sndPacket.endOfPacket();
-                net.socket.send(sndPacket);
+        sf::Packet rcvPacket;
+        if (net.socket.receive(rcvPacket) == sf::Socket::Status::Done) {
+            int x, y;
+            rcvPacket >> x;
+            rcvPacket >> y;
 
-                moveMade = false;
-            }
-
-            sf::Packet rcvPacket;
-            if (net.socket.receive(rcvPacket) == sf::Socket::Status::Done) {
-                int x, y;
-
-                rcvPacket >> x;
-                rcvPacket >> y;
-
-                map.setAt(x, y, player);
-            }
+            map.setAt(x, y, player);
+            if(player == Map::C_CROSS) player = Map::C_CIRCLE;
+            else if(player == Map::C_CIRCLE) player = Map::C_CROSS;
         }
     }
 }
@@ -135,7 +142,28 @@ void GameScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
     }
 
     if (net.state == Network::CONNECTED) {
-        static sf::Text title("Tic Tac Toe", gameInfo->font, 25);
+        std::stringstream st;
+        char winner = map.getWinner();
+
+        for (int i = 0; i < 3; ++i) {
+            for (int j = 0; j < 3; ++j) {
+                std::cout << map.getAt(i, j) << " ";
+            }
+            std::cout << std::endl;
+        }
+        std::cout << std::endl;
+
+        if(!winner) {
+            st << "You: ";
+            st << me;
+            st << " ";
+            st << (int) winner;
+        } else {
+            if(me == winner) st << "You won!";
+            else st << "You lost!";
+        }
+
+        static sf::Text title(st.str(), gameInfo->font, 25);
 
         title.setPosition(Window::VWIDTH / 2, 20);
         auto ir = title.getLocalBounds();
@@ -169,6 +197,28 @@ void GameScene::handle(sf::Event event) {
     if(net.state == Network::GATHERING_INFO) {
         ipInput.handle(event);
     }
+
+    if(net.state == Network::CONNECTED) {
+        if(event.type == sf::Event::MouseButtonPressed) {
+            if(event.mouseButton.button == sf::Mouse::Button::Left){
+                for (int i = 0; i < 3; ++i) {
+                    for (int j = 0; j < 3; ++j) {
+                        mapButtons[i][j].mouseDown(event.mouseButton.x, event.mouseButton.y);
+                    }
+                }
+            }
+        }
+
+        if(event.type == sf::Event::MouseButtonReleased) {
+            if(event.mouseButton.button == sf::Mouse::Button::Left){
+                for (int i = 0; i < 3; ++i) {
+                    for (int j = 0; j < 3; ++j) {
+                        mapButtons[i][j].mouseUp(event.mouseButton.x, event.mouseButton.y);
+                    }
+                }
+            }
+        }
+    }
 }
 
 GameScene::Network *GameScene::getNet() {
@@ -194,6 +244,7 @@ void *clientControll(void *gameScene) {
         if (net->socket.connect(net->ip, PORT) == sf::Socket::Done) {
             net->state = GameScene::Network::CONNECTED;
             net->socket.setBlocking(false);
+
         } else {
             std::cout << "didnt connect" << std::endl;
         }

@@ -11,6 +11,7 @@
 #include "gameinfo.hpp"
 #include "animation.hpp"
 #include "textinput.hpp"
+#include "button.hpp"
 #include <memory>
 #include <pthread.h>
 
@@ -41,7 +42,9 @@ private:
 
     Network net;
     Map map;
+    Button mapButtons[3][3];
     char player;
+    char me;
     sf::Vector2i toPlace;
     bool moveMade;
 
