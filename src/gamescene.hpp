@@ -38,8 +38,12 @@ private:
 
     TextInput ipInput;
     sf::Sprite loadAnim;
+
     Network net;
     Map map;
+    char player;
+    sf::Vector2i toPlace;
+    bool moveMade;
 
 public:
     explicit GameScene(GameInfo *gameInfo);

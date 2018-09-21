@@ -19,14 +19,24 @@ GameScene::GameScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
     const sf::IntRect &ir = loadAnim.getTextureRect();
     loadAnim.setOrigin(ir.width / 2, ir.height / 2);
 
-
     layoutTex.loadFromFile("res/layout.png");
     layout.setTexture(layoutTex, false);
     auto sr = layoutTex.getSize();
     layout.setOrigin(sr.x / 2, sr.y / 2);
     layout.setPosition(Window::VWIDTH / 2, Window::VHEIGHT / 2 + 30);
 
+    crossTex.loadFromFile("res/cross.png");
+    crossTex.setSmooth(true);
+
+    circleTex.loadFromFile("res/circle.png");
+    circleTex.setSmooth(true);
+
     net.state = Network::IDLE;
+
+    player = Map::C_CROSS;
+
+    moveMade = true;
+    toPlace = {1, 2};
 }
 
 void GameScene::update(float delta) {
@@ -61,7 +71,39 @@ void GameScene::update(float delta) {
     }
 
     if (net.state == Network::CONNECTED) {
+        if (gameInfo->networkType == HOST) {
+            sf::Packet packet;
+            if (net.socket.receive(packet) == sf::Socket::Status::Done) {
+                int x, y;
 
+                packet >> x;
+                packet >> y;
+
+                map.setAt(x, y, player);
+            }
+        }
+
+        if (gameInfo->networkType == CLIENT) {
+            if(moveMade) {
+                sf::Packet sndPacket;
+                sndPacket << toPlace.x;
+                sndPacket << toPlace.y;
+                sndPacket.endOfPacket();
+                net.socket.send(sndPacket);
+
+                moveMade = false;
+            }
+
+            sf::Packet rcvPacket;
+            if (net.socket.receive(rcvPacket) == sf::Socket::Status::Done) {
+                int x, y;
+
+                rcvPacket >> x;
+                rcvPacket >> y;
+
+                map.setAt(x, y, player);
+            }
+        }
     }
 }
 
@@ -102,6 +144,24 @@ void GameScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
 
         window->draw(title);
         window->draw(layout);
+
+        static sf::Sprite s;
+        for (int i = 0; i < 3; ++i) {
+            for (int j = 0; j < 3; ++j) {
+                char c = map.getAt(i, j);
+
+                if(c == Map::C_CROSS) s.setTexture(crossTex, true);
+                else if(c == Map::C_CIRCLE) s.setTexture(circleTex, true);
+                else continue;
+
+                s.setScale(0.9f, 0.9f);
+                auto sr = s.getTexture()->getSize();
+                s.setOrigin(sr.x / 2, sr.y / 2);
+                s.setPosition((float)i * (layoutTex.getSize().x / 3.0f + 3.0f) + layout.getPosition().x - layout.getOrigin().x + sr.x / 2,
+                              (float)j * (layoutTex.getSize().y / 3.0f + 3.0f) + layout.getPosition().y - layout.getOrigin().y + sr.y / 2);
+                window->draw(s);
+            }
+        }
     }
 }
 
@@ -121,6 +181,7 @@ void *hostControll(void *gameScene) {
 
     if (net->listener.accept(net->socket) == sf::Socket::Done) {
         net->state = GameScene::Network::CONNECTED;
+        net->socket.setBlocking(false);
     } else {
         std::cout << "didnt accept" << std::endl;
     }
@@ -132,6 +193,7 @@ void *clientControll(void *gameScene) {
     while (net->state != GameScene::Network::CONNECTED) {
         if (net->socket.connect(net->ip, PORT) == sf::Socket::Done) {
             net->state = GameScene::Network::CONNECTED;
+            net->socket.setBlocking(false);
         } else {
             std::cout << "didnt connect" << std::endl;
         }
