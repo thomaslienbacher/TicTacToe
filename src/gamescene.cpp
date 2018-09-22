@@ -170,7 +170,7 @@ void GameScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
                 else st << "  -  Enemys turn";
             }
         } else {
-            if(!map.isFull()) {
+            if(winner != 0) {
                 if (me == winner) st << "You won!";
                 else st << "You lost!";
             } else {
