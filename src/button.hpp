@@ -15,7 +15,7 @@ class Button {
 
     sf::Sprite sprite;
     sf::Text text;
-    sf::Vector2f position;
+    sf::Vector2f position;//TODO: remove this, sprites also have position data in them
     std::function<void()> onclick;
     bool down = false;
 
@@ -27,6 +27,7 @@ public:
     void mouseDown(int x, int y);
     void mouseUp(int x, int y);
 
+    //TODO: why do we need these getters??
     void setFont(const sf::Font &font);
     void setText(const std::string &text);
     const sf::Sprite &getSprite() const;

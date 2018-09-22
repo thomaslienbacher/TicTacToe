@@ -8,6 +8,8 @@
 #include "gamescene.hpp"
 #include "window.hpp"
 
+//TODO: split up the functions, this is serious cancer
+
 GameScene::GameScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
     loadAnimTex.loadFromFile("res/load_circle.png");
     loadAnimTex.setSmooth(true);
@@ -69,6 +71,7 @@ void GameScene::update(float delta) {
         }
     }
 
+    //TODO: yield or join threads
     if (net.state == Network::SETUP) {
         if (gameInfo->networkType == HOST) {
             pthread_create(&net.thread, NULL, hostControll, this);
@@ -113,6 +116,7 @@ void GameScene::update(float delta) {
             else if(player == Map::C_CIRCLE) player = Map::C_CROSS;
         }
 
+        //TODO: implement a better way of reseting a game, eg. send a reset request and check to server and client, or a reset button
         if(gameOver) {
             time += delta;
 
@@ -120,15 +124,13 @@ void GameScene::update(float delta) {
                 time = 0;
                 gameOver = false;
                 moveMade = false;
-
                 map.reset();
-
-                std::cout << "reset" << std::endl;
             }
         }
     }
 }
 
+//TODO: make static vars member vars and eleminate the need to set their properties every frame
 void GameScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
     if(net.state == Network::GATHERING_INFO) {
         static sf::Text ipText("Enter IP Address", gameInfo->font);
@@ -160,6 +162,7 @@ void GameScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
         std::stringstream st;
         char winner = map.getWinner();
 
+        //TODO: there are better ways to show this information
         if(winner == 0) {
             st << "You: ";
             st << me;
@@ -170,7 +173,7 @@ void GameScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
         } else {
             if(me == winner) st << "You won!";
             else st << "You lost!";
-            st << "  -  Reset in " << std::fixed << std::setprecision(1) << (RESET_TIME - time) << "s";
+            st << "  -  Reset in " << std::fixed << std::setprecision(2) << (RESET_TIME - time) << "s";
             gameOver = true;
         }
 
@@ -237,6 +240,7 @@ GameScene::Network *GameScene::getNet() {
     return &net;
 }
 
+//TODO: correct error handling
 void *hostControll(void *gameScene) {
     GameScene::Network *net = ((GameScene *) gameScene)->getNet();
     net->listener.listen(PORT);

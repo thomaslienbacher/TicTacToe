@@ -4,6 +4,7 @@
 
 #include "eventhandler.hpp"
 
+//TODO: can we somehow remove this?
 void EventHandler::handle(sf::Event) {
 
 }

@@ -10,11 +10,12 @@
 #include <list>
 #include <memory>
 
+//TODO: put this somewhere, maybe we need it in a later project, then remove it from source
 class Animation {
 
     float swapTime;
     float time = 0;
-    sf::Texture texture;
+    sf::Texture texture;//TODO: remove this, its never used
     sf::Sprite sprite;
     int currentFrame = 0;
     std::vector<sf::IntRect> regions;

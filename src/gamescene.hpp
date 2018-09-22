@@ -15,12 +15,15 @@
 #include <memory>
 #include <pthread.h>
 
+//TODO: correctly asign either defines or constexpr type constants
 #define PORT 45302
 #define RESET_TIME 5.0f
 
+//TODO: cleanup this class
 class GameScene : public EventHandler {
 public:
 
+    //TODO: seperate gamescene from networking stuff and create a scene for that
     struct Network {
         pthread_t thread;
         sf::TcpListener listener;
@@ -50,9 +53,11 @@ private:
     bool moveMade;
     bool gameOver = false;
     float time = 0;
+    //TODO: implement internal gamestate system as opposed the "figure out where we are and do things"
 
 public:
     explicit GameScene(GameInfo *gameInfo);
+    //TODO: create a proper destructor then close sockets, kill threads, free resources
 
     void update(float delta);
     void draw(std::shared_ptr<sf::RenderWindow>& window);
