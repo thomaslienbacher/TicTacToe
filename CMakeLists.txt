@@ -8,6 +8,14 @@ set(MGW_LOC "C:/MinGW/lib/")
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 
+if(${CMAKE_BUILD_TYPE} STREQUAL Release)
+    add_definitions("-DRELEASE_BUILD")
+    set(CMAKE_C_FLAGS "${CMAKE_CXX_FLAGS} -mwindows -Wall -Wextra") #warning: os specific command used
+elseif(${CMAKE_BUILD_TYPE} STREQUAL Debug)
+    add_definitions("-DDEBUG_BUILD")
+endif()
+
+
 include_directories(${LIB_LOC}sfml/include/)
 
 add_executable(TicTacToe src/main.cpp src/window.cpp src/window.hpp src/map.hpp src/map.cpp src/map.hpp src/button.cpp src/button.hpp src/gamescene.cpp src/gamescene.hpp src/menuscene.cpp src/menuscene.hpp src/eventhandler.hpp src/eventhandler.cpp src/gameinfo.hpp src/textinput.cpp src/textinput.hpp)

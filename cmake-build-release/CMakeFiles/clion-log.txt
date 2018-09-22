@@ -1,0 +1,4 @@
+"E:\Programme\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - MinGW Makefiles" E:\Thomas\Repositories\TicTacToe
+-- Configuring done
+-- Generating done
+-- Build files have been written to: E:/Thomas/Repositories/TicTacToe/cmake-build-release

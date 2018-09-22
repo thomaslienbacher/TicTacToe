@@ -2,8 +2,6 @@
 #include "gamescene.hpp"
 #include "menuscene.hpp"
 
-//TODO: actually fix the problem where the console spawns at start
-//int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
 int main() {
     GameInfo gameInfo;
     gameInfo.gamestate = MENU;
