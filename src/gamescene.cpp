@@ -2,6 +2,7 @@
 // Created by Thomas Lienbacher on 16.09.2018.
 //
 
+#include <iomanip>
 #include <iostream>
 #include <sstream>
 #include "gamescene.hpp"
@@ -111,6 +112,20 @@ void GameScene::update(float delta) {
             if(player == Map::C_CROSS) player = Map::C_CIRCLE;
             else if(player == Map::C_CIRCLE) player = Map::C_CROSS;
         }
+
+        if(gameOver) {
+            time += delta;
+
+            if(time > RESET_TIME) {
+                time = 0;
+                gameOver = false;
+                moveMade = false;
+
+                map.reset();
+
+                std::cout << "reset" << std::endl;
+            }
+        }
     }
 }
 
@@ -155,6 +170,7 @@ void GameScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
         } else {
             if(me == winner) st << "You won!";
             else st << "You lost!";
+            st << "  -  Reset in " << std::fixed << std::setprecision(1) << (RESET_TIME - time) << "s";
             gameOver = true;
         }
 

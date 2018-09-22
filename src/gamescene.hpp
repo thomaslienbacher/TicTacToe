@@ -16,6 +16,7 @@
 #include <pthread.h>
 
 #define PORT 45302
+#define RESET_TIME 5.0f
 
 class GameScene : public EventHandler {
 public:
@@ -48,6 +49,7 @@ private:
     sf::Vector2i toPlace;
     bool moveMade;
     bool gameOver = false;
+    float time = 0;
 
 public:
     explicit GameScene(GameInfo *gameInfo);
