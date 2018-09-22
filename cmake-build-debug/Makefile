@@ -122,33 +122,6 @@ TicTacToe/fast:
 	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/build
 .PHONY : TicTacToe/fast
 
-src/animation.obj: src/animation.cpp.obj
-
-.PHONY : src/animation.obj
-
-# target to build an object file
-src/animation.cpp.obj:
-	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/animation.cpp.obj
-.PHONY : src/animation.cpp.obj
-
-src/animation.i: src/animation.cpp.i
-
-.PHONY : src/animation.i
-
-# target to preprocess a source file
-src/animation.cpp.i:
-	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/animation.cpp.i
-.PHONY : src/animation.cpp.i
-
-src/animation.s: src/animation.cpp.s
-
-.PHONY : src/animation.s
-
-# target to generate assembly for a file
-src/animation.cpp.s:
-	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/animation.cpp.s
-.PHONY : src/animation.cpp.s
-
 src/button.obj: src/button.cpp.obj
 
 .PHONY : src/button.obj
@@ -374,9 +347,6 @@ help:
 	@echo ... TicTacToe
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... src/animation.obj
-	@echo ... src/animation.i
-	@echo ... src/animation.s
 	@echo ... src/button.obj
 	@echo ... src/button.i
 	@echo ... src/button.s

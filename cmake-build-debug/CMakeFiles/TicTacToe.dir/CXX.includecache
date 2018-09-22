@@ -802,13 +802,9 @@ SFML/Config.hpp
 
 ../libs/sfml/include/SFML/Window/WindowStyle.hpp
 
-E:/Thomas/Repositories/TicTacToe/src/animation.cpp
-animation.hpp
 E:/Thomas/Repositories/TicTacToe/src/animation.hpp
-
-E:/Thomas/Repositories/TicTacToe/src/animation.hpp
-sfml.hpp
-E:/Thomas/Repositories/TicTacToe/src/sfml.hpp
+SFML/Graphics.hpp
+-
 list
 -
 memory
@@ -821,8 +817,8 @@ E:/Thomas/Repositories/TicTacToe/src/button.hpp
 E:/Thomas/Repositories/TicTacToe/src/button.hpp
 functional
 -
-sfml.hpp
-E:/Thomas/Repositories/TicTacToe/src/sfml.hpp
+SFML/Graphics.hpp
+-
 memory
 -
 
@@ -831,8 +827,8 @@ eventhandler.hpp
 E:/Thomas/Repositories/TicTacToe/src/eventhandler.hpp
 
 E:/Thomas/Repositories/TicTacToe/src/eventhandler.hpp
-sfml.hpp
-E:/Thomas/Repositories/TicTacToe/src/sfml.hpp
+SFML/Graphics.hpp
+-
 
 E:/Thomas/Repositories/TicTacToe/src/gameinfo.hpp
 
@@ -849,8 +845,10 @@ window.hpp
 E:/Thomas/Repositories/TicTacToe/src/window.hpp
 
 E:/Thomas/Repositories/TicTacToe/src/gamescene.hpp
-sfml.hpp
-E:/Thomas/Repositories/TicTacToe/src/sfml.hpp
+SFML/Graphics.hpp
+-
+SFML/Network.hpp
+-
 map.hpp
 E:/Thomas/Repositories/TicTacToe/src/map.hpp
 eventhandler.hpp
@@ -869,16 +867,12 @@ pthread.h
 -
 
 E:/Thomas/Repositories/TicTacToe/src/main.cpp
-windows.h
--
 window.hpp
 E:/Thomas/Repositories/TicTacToe/src/window.hpp
 gamescene.hpp
 E:/Thomas/Repositories/TicTacToe/src/gamescene.hpp
 menuscene.hpp
 E:/Thomas/Repositories/TicTacToe/src/menuscene.hpp
-gameinfo.hpp
-E:/Thomas/Repositories/TicTacToe/src/gameinfo.hpp
 
 E:/Thomas/Repositories/TicTacToe/src/map.cpp
 map.hpp
@@ -895,8 +889,6 @@ window.hpp
 E:/Thomas/Repositories/TicTacToe/src/window.hpp
 
 E:/Thomas/Repositories/TicTacToe/src/menuscene.hpp
-sfml.hpp
-E:/Thomas/Repositories/TicTacToe/src/sfml.hpp
 button.hpp
 E:/Thomas/Repositories/TicTacToe/src/button.hpp
 eventhandler.hpp
@@ -906,21 +898,15 @@ E:/Thomas/Repositories/TicTacToe/src/gameinfo.hpp
 memory
 -
 
-E:/Thomas/Repositories/TicTacToe/src/sfml.hpp
-SFML/System.hpp
--
-SFML/Graphics.hpp
--
-SFML/Network.hpp
--
-
 E:/Thomas/Repositories/TicTacToe/src/textinput.cpp
+iostream
+-
 textinput.hpp
 E:/Thomas/Repositories/TicTacToe/src/textinput.hpp
 
 E:/Thomas/Repositories/TicTacToe/src/textinput.hpp
-sfml.hpp
-E:/Thomas/Repositories/TicTacToe/src/sfml.hpp
+SFML/Graphics.hpp
+-
 memory
 -
 
@@ -939,8 +925,8 @@ memory
 -
 list
 -
-sfml.hpp
-E:/Thomas/Repositories/TicTacToe/src/sfml.hpp
+SFML/Window.hpp
+-
 eventhandler.hpp
 E:/Thomas/Repositories/TicTacToe/src/eventhandler.hpp
 

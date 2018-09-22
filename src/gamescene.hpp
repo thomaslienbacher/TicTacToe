@@ -5,7 +5,8 @@
 #ifndef TICTACTOE_GAMESCENE_HPP
 #define TICTACTOE_GAMESCENE_HPP
 
-#include "sfml.hpp"
+#include <SFML/Graphics.hpp>
+#include <SFML/Network.hpp>
 #include "map.hpp"
 #include "eventhandler.hpp"
 #include "gameinfo.hpp"

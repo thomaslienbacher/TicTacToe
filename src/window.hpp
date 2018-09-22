@@ -7,7 +7,7 @@
 
 #include <memory>
 #include <list>
-#include "sfml.hpp"
+#include <SFML/Window.hpp>
 #include "eventhandler.hpp"
 
 class Window {

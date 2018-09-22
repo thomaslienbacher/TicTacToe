@@ -5,7 +5,6 @@
 #ifndef TICTACTOE_MENUSCENE_HPP
 #define TICTACTOE_MENUSCENE_HPP
 
-#include "sfml.hpp"
 #include "button.hpp"
 #include "eventhandler.hpp"
 #include "gameinfo.hpp"

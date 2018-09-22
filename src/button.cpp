@@ -5,8 +5,9 @@
 #include "button.hpp"
 
 Button::Button(std::string text, sf::Texture texture, sf::Vector2f position, std::function<void()> onclick)
-: sprite(texture), position(position), onclick(onclick) {
+: sprite(texture), onclick(onclick) {
     setText(text);
+    sprite.setPosition(position);
 }
 
 void Button::draw(std::shared_ptr<sf::RenderWindow> &window) {
@@ -20,8 +21,7 @@ void Button::draw(std::shared_ptr<sf::RenderWindow> &window) {
     }
 
     auto gb = text.getGlobalBounds();
-    sprite.setPosition(position.x, position.y);
-    text.setPosition(position.x- gb.width / 2, position.y - gb.height / 2);
+    text.setPosition(sprite.getPosition().x- gb.width / 2, sprite.getPosition().y - gb.height / 2);
     text.setFillColor(sf::Color::Black);
 
     window->draw(sprite);
@@ -48,10 +48,6 @@ void Button::setText(const std::string &text) {
     this->text.setString(text);
 }
 
-const sf::Sprite &Button::getSprite() const {
-    return sprite;
-}
-
 void Button::setTexture(const sf::Texture &texture) {
     sprite.setTexture(texture, true);
     const sf::IntRect& ir = sprite.getTextureRect();
@@ -59,22 +55,13 @@ void Button::setTexture(const sf::Texture &texture) {
 }
 
 const sf::FloatRect Button::getBounds() const {
-    const sf::IntRect& ir = sprite.getTextureRect();
-    return {position.x - sprite.getOrigin().x, position.y - sprite.getOrigin().y, ir.width, ir.height};
+    auto ir = sprite.getTextureRect();
+    return {sprite.getPosition().x - sprite.getOrigin().x, sprite.getPosition().y - sprite.getOrigin().y, (float) ir.width, (float) ir.height};
 }
-
-const std::function<void()> &Button::getOnclick() const {
-    return onclick;
-}
-
 void Button::setOnclick(const std::function<void()> &onclick) {
     Button::onclick = onclick;
 }
 
-const sf::Vector2f &Button::getPosition() const {
-    return position;
-}
-
 void Button::setPosition(const sf::Vector2f &position) {
-    Button::position = position;
+    sprite.setPosition(position);
 }

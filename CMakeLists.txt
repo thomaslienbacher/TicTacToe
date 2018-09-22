@@ -10,7 +10,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 
 include_directories(${LIB_LOC}sfml/include/)
 
-add_executable(TicTacToe src/main.cpp src/sfml.hpp src/window.cpp src/window.hpp src/map.hpp src/map.cpp src/map.hpp src/button.cpp src/button.hpp src/gamescene.cpp src/gamescene.hpp src/menuscene.cpp src/menuscene.hpp src/eventhandler.hpp src/eventhandler.cpp src/gameinfo.hpp src/animation.cpp src/animation.hpp src/textinput.cpp src/textinput.hpp)
+add_executable(TicTacToe src/main.cpp src/window.cpp src/window.hpp src/map.hpp src/map.cpp src/map.hpp src/button.cpp src/button.hpp src/gamescene.cpp src/gamescene.hpp src/menuscene.cpp src/menuscene.hpp src/eventhandler.hpp src/eventhandler.cpp src/gameinfo.hpp src/textinput.cpp src/textinput.hpp)
 
 target_link_libraries(${PROJECT_NAME} ${MGW_LOC}libopengl32.a)
 target_link_libraries(${PROJECT_NAME} ${MGW_LOC}libwinmm.a)

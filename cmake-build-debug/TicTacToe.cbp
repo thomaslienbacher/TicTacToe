@@ -84,12 +84,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="E:/Thomas/Repositories/TicTacToe/src/animation.cpp">
-			<Option target="TicTacToe"/>
-		</Unit>
-		<Unit filename="E:/Thomas/Repositories/TicTacToe/src/animation.hpp">
-			<Option target="TicTacToe"/>
-		</Unit>
 		<Unit filename="E:/Thomas/Repositories/TicTacToe/src/button.cpp">
 			<Option target="TicTacToe"/>
 		</Unit>
@@ -124,9 +118,6 @@
 			<Option target="TicTacToe"/>
 		</Unit>
 		<Unit filename="E:/Thomas/Repositories/TicTacToe/src/menuscene.hpp">
-			<Option target="TicTacToe"/>
-		</Unit>
-		<Unit filename="E:/Thomas/Repositories/TicTacToe/src/sfml.hpp">
 			<Option target="TicTacToe"/>
 		</Unit>
 		<Unit filename="E:/Thomas/Repositories/TicTacToe/src/textinput.cpp">

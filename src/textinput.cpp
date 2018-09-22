@@ -2,6 +2,7 @@
 // Created by Thomas Lienbacher on 19.09.2018.
 //
 
+#include <iostream>
 #include "textinput.hpp"
 
 void TextInput::update(float delta) {
@@ -14,25 +15,36 @@ void TextInput::update(float delta) {
 }
 
 void TextInput::draw(std::shared_ptr<sf::RenderWindow> &window) {
-    if (showUnderscore && raw.length() < maxchars) text.setString(raw + "_");
+    if(text.getLocalBounds().width > (size.width - PADDING * 2)) {
+        raw = raw.substr(0, raw.size() - 1);
+        limitReached = true;
+    }
+
+    if (showUnderscore && canCharFit() && !limitReached) text.setString(raw + "_");
     else text.setString(raw);
 
     window->draw(box);
     window->draw(text);
 }
 
+//TODO: remove quick blink of protruding char
 void TextInput::handle(sf::Event &event) {
     if (event.type == sf::Event::TextEntered) {
         if (event.text.unicode < 128) {
             if (event.text.unicode == 8) { // backspace
                 if (raw.length() > 0) raw = raw.substr(0, raw.size() - 1);
+                limitReached = false;
             } else if (event.text.unicode == 13) { // enter
                 entered = true;
             } else {
-                if (raw.length() < maxchars) raw += event.text.unicode;
+                if (canCharFit() && !limitReached) raw += event.text.unicode;
             }
         }
     }
+}
+
+inline bool TextInput::canCharFit() {
+    return text.getLocalBounds().width < (size.width - PADDING * 2);
 }
 
 std::string TextInput::getInput() {
@@ -44,8 +56,8 @@ void TextInput::setFont(sf::Font &font) {
     text.setFillColor(sf::Color::Black);
 }
 
-void TextInput::setSize(sf::IntRect intRect) {
-    size = intRect;
+void TextInput::setSize(sf::FloatRect floatRect) {
+    size = floatRect;
 
     box.setFillColor(sf::Color::White);
     box.setOutlineColor(sf::Color::Black);
@@ -55,11 +67,6 @@ void TextInput::setSize(sf::IntRect intRect) {
 
     text.setPosition(size.left + PADDING, size.top + size.height / 2 - text.getCharacterSize() / 2);
 }
-
-void TextInput::setMaxchars(int maxchars) {
-    TextInput::maxchars = maxchars;
-}
-
 bool TextInput::isEntered() const {
     return entered;
 }

@@ -6,7 +6,7 @@
 #define TICTACTOE_EVENTHANDLER_HPP
 
 
-#include "sfml.hpp"
+#include <SFML/Graphics.hpp>
 
 struct EventHandler {
     virtual void handle(sf::Event);

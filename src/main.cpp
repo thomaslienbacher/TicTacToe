@@ -19,6 +19,8 @@ int main() {
     gameInfo.font.loadFromFile("res/roboto.ttf");
 
     while(window.isRunning()) {
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) window.getWindow()->close();
+
         float delta = window.update();
         //update
 

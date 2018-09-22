@@ -5,7 +5,6 @@
 #ifndef TICTACTOE_GAMEINFO_HPP
 #define TICTACTOE_GAMEINFO_HPP
 
-
 enum State {MENU, GAME};
 enum NetworkType {HOST, CLIENT};
 

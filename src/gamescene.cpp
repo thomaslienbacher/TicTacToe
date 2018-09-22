@@ -16,11 +16,10 @@ GameScene::GameScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
 
     ipInput.setFont(gameInfo->font);
     ipInput.setSize({Window::VWIDTH / 2 - 200, Window::VHEIGHT / 2, 400, 60});
-    ipInput.setMaxchars(21);
 
     loadAnim.setPosition(Window::VWIDTH / 2, Window::VHEIGHT / 2);
     loadAnim.setTexture(loadAnimTex, true);
-    const sf::IntRect &ir = loadAnim.getTextureRect();
+    auto ir = loadAnim.getTextureRect();
     loadAnim.setOrigin(ir.width / 2, ir.height / 2);
 
     layoutTex.loadFromFile("res/layout.png");
@@ -163,7 +162,7 @@ void GameScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
         char winner = map.getWinner();
 
         //TODO: there are better ways to show this information
-        if(winner == 0) {
+        if(winner == 0 && !map.isFull()) {
             st << "You: ";
             st << me;
             if(!gameOver) {
@@ -171,8 +170,13 @@ void GameScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
                 else st << "  -  Enemys turn";
             }
         } else {
-            if(me == winner) st << "You won!";
-            else st << "You lost!";
+            if(!map.isFull()) {
+                if (me == winner) st << "You won!";
+                else st << "You lost!";
+            } else {
+                st << "Draw!";
+            }
+
             st << "  -  Reset in " << std::fixed << std::setprecision(2) << (RESET_TIME - time) << "s";
             gameOver = true;
         }

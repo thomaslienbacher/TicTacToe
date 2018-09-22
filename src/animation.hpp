@@ -6,16 +6,15 @@
 #define TICTACTOE_ANIMATION_HPP
 
 
-#include "sfml.hpp"
+#include <SFML/Graphics.hpp>
 #include <list>
 #include <memory>
 
-//TODO: put this somewhere, maybe we need it in a later project, then remove it from source
+//this class is removed from source but still in the files here
 class Animation {
 
     float swapTime;
     float time = 0;
-    sf::Texture texture;//TODO: remove this, its never used
     sf::Sprite sprite;
     int currentFrame = 0;
     std::vector<sf::IntRect> regions;

@@ -20,6 +20,7 @@ public:
     char getAt(int x, int y);
     char getWinner();
     void reset();
+    bool isFull();
 };
 
 

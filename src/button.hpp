@@ -6,7 +6,7 @@
 #define TICTACTOE_BUTTON_HPP
 
 #include <functional>
-#include "sfml.hpp"
+#include <SFML/Graphics.hpp>
 #include <memory>
 
 class Button {
@@ -14,9 +14,9 @@ class Button {
     static constexpr float DOWN_SCALE = 0.94f;
 
     sf::Sprite sprite;
-    sf::Text text;
-    sf::Vector2f position;//TODO: remove this, sprites also have position data in them
+
     std::function<void()> onclick;
+    sf::Text text;
     bool down = false;
 
 public:
@@ -27,15 +27,11 @@ public:
     void mouseDown(int x, int y);
     void mouseUp(int x, int y);
 
-    //TODO: why do we need these getters??
     void setFont(const sf::Font &font);
     void setText(const std::string &text);
-    const sf::Sprite &getSprite() const;
     void setTexture(const sf::Texture &texture);
-    const sf::Vector2f &getPosition() const;
     void setPosition(const sf::Vector2f &position);
     const sf::FloatRect getBounds() const;
-    const std::function<void()> &getOnclick() const;
     void setOnclick(const std::function<void()> &onclick);
 };
 

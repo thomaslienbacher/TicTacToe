@@ -5,7 +5,7 @@
 #ifndef TICTACTOE_TEXTINPUT_HPP
 #define TICTACTOE_TEXTINPUT_HPP
 
-#include "sfml.hpp"
+#include <SFML/Graphics.hpp>
 #include <memory>
 
 /* TODO: maybe implement a better way to limit the amout of chars,
@@ -18,11 +18,13 @@ class TextInput {
     std::string raw;
     sf::Text text;
     sf::RectangleShape box;
-    sf::IntRect size;
+    sf::FloatRect size;
     float time = 0;
+    bool limitReached = false;
     bool showUnderscore = false;
-    int maxchars = 20;
     bool entered = false;
+
+    inline bool canCharFit();
 
 public:
     TextInput() = default;
@@ -33,8 +35,7 @@ public:
     std::string getInput();
 
     void setFont(sf::Font &font);
-    void setSize(sf::IntRect intRect);
-    void setMaxchars(int maxchars);
+    void setSize(sf::FloatRect floatRect);
 
     bool isEntered() const;
 };
