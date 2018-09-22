@@ -44,7 +44,7 @@ GameScene::GameScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
             mapButtons[i][j].setPosition({(float)i * (layoutTex.getSize().x / 3.0f + 3.0f) + layout.getPosition().x - layout.getOrigin().x + sr.x / 2,
                                           (float)j * (layoutTex.getSize().y / 3.0f + 3.0f) + layout.getPosition().y - layout.getOrigin().y + sr.y / 2});
             mapButtons[i][j].setOnclick([i, j, this] {
-                if (this->player == this->me && !map.getAt(i, j)) {
+                if (player == me && !map.getAt(i, j) && !gameOver) {
                     moveMade = true;
                     toPlace = {i, j};
                 }
@@ -145,25 +145,21 @@ void GameScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
         std::stringstream st;
         char winner = map.getWinner();
 
-        for (int i = 0; i < 3; ++i) {
-            for (int j = 0; j < 3; ++j) {
-                std::cout << map.getAt(i, j) << " ";
-            }
-            std::cout << std::endl;
-        }
-        std::cout << std::endl;
-
-        if(!winner) {
+        if(winner == 0) {
             st << "You: ";
             st << me;
-            st << " ";
-            st << (int) winner;
+            if(!gameOver) {
+                if (me == player) st << "  -  Your turn";
+                else st << "  -  Enemys turn";
+            }
         } else {
             if(me == winner) st << "You won!";
             else st << "You lost!";
+            gameOver = true;
         }
 
         static sf::Text title(st.str(), gameInfo->font, 25);
+        title.setString(st.str());
 
         title.setPosition(Window::VWIDTH / 2, 20);
         auto ir = title.getLocalBounds();

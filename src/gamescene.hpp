@@ -47,6 +47,7 @@ private:
     char me;
     sf::Vector2i toPlace;
     bool moveMade;
+    bool gameOver = false;
 
 public:
     explicit GameScene(GameInfo *gameInfo);
