@@ -206,35 +206,10 @@ CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj.provides: CMakeFiles/TicTacToe.di
 CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj.provides.build: CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj
 
 
-CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj: CMakeFiles/TicTacToe.dir/flags.make
-CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj: CMakeFiles/TicTacToe.dir/includes_CXX.rsp
-CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj: ../src/eventhandler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TicTacToe.dir\src\eventhandler.cpp.obj -c E:\Thomas\Repositories\TicTacToe\src\eventhandler.cpp
-
-CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Thomas\Repositories\TicTacToe\src\eventhandler.cpp > CMakeFiles\TicTacToe.dir\src\eventhandler.cpp.i
-
-CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Thomas\Repositories\TicTacToe\src\eventhandler.cpp -o CMakeFiles\TicTacToe.dir\src\eventhandler.cpp.s
-
-CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj.requires:
-
-.PHONY : CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj.requires
-
-CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj.provides: CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj.provides.build
-.PHONY : CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj.provides
-
-CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj.provides.build: CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj
-
-
 CMakeFiles/TicTacToe.dir/src/textinput.cpp.obj: CMakeFiles/TicTacToe.dir/flags.make
 CMakeFiles/TicTacToe.dir/src/textinput.cpp.obj: CMakeFiles/TicTacToe.dir/includes_CXX.rsp
 CMakeFiles/TicTacToe.dir/src/textinput.cpp.obj: ../src/textinput.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TicTacToe.dir/src/textinput.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TicTacToe.dir/src/textinput.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TicTacToe.dir\src\textinput.cpp.obj -c E:\Thomas\Repositories\TicTacToe\src\textinput.cpp
 
 CMakeFiles/TicTacToe.dir/src/textinput.cpp.i: cmake_force
@@ -259,7 +234,7 @@ CMakeFiles/TicTacToe.dir/src/textinput.cpp.obj.provides.build: CMakeFiles/TicTac
 CMakeFiles/TicTacToe.dir/src/networkscene.cpp.obj: CMakeFiles/TicTacToe.dir/flags.make
 CMakeFiles/TicTacToe.dir/src/networkscene.cpp.obj: CMakeFiles/TicTacToe.dir/includes_CXX.rsp
 CMakeFiles/TicTacToe.dir/src/networkscene.cpp.obj: ../src/networkscene.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/TicTacToe.dir/src/networkscene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TicTacToe.dir/src/networkscene.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TicTacToe.dir\src\networkscene.cpp.obj -c E:\Thomas\Repositories\TicTacToe\src\networkscene.cpp
 
 CMakeFiles/TicTacToe.dir/src/networkscene.cpp.i: cmake_force
@@ -289,7 +264,6 @@ TicTacToe_OBJECTS = \
 "CMakeFiles/TicTacToe.dir/src/button.cpp.obj" \
 "CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj" \
 "CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj" \
-"CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj" \
 "CMakeFiles/TicTacToe.dir/src/textinput.cpp.obj" \
 "CMakeFiles/TicTacToe.dir/src/networkscene.cpp.obj"
 
@@ -302,7 +276,6 @@ TicTacToe.exe: CMakeFiles/TicTacToe.dir/src/map.cpp.obj
 TicTacToe.exe: CMakeFiles/TicTacToe.dir/src/button.cpp.obj
 TicTacToe.exe: CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj
 TicTacToe.exe: CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj
-TicTacToe.exe: CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj
 TicTacToe.exe: CMakeFiles/TicTacToe.dir/src/textinput.cpp.obj
 TicTacToe.exe: CMakeFiles/TicTacToe.dir/src/networkscene.cpp.obj
 TicTacToe.exe: CMakeFiles/TicTacToe.dir/build.make
@@ -325,7 +298,7 @@ TicTacToe.exe: ../libs/sfml/libsfml-graphics.a
 TicTacToe.exe: CMakeFiles/TicTacToe.dir/linklibs.rsp
 TicTacToe.exe: CMakeFiles/TicTacToe.dir/objects1.rsp
 TicTacToe.exe: CMakeFiles/TicTacToe.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable TicTacToe.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=E:\Thomas\Repositories\TicTacToe\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable TicTacToe.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\TicTacToe.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -339,7 +312,6 @@ CMakeFiles/TicTacToe.dir/requires: CMakeFiles/TicTacToe.dir/src/map.cpp.obj.requ
 CMakeFiles/TicTacToe.dir/requires: CMakeFiles/TicTacToe.dir/src/button.cpp.obj.requires
 CMakeFiles/TicTacToe.dir/requires: CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj.requires
 CMakeFiles/TicTacToe.dir/requires: CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj.requires
-CMakeFiles/TicTacToe.dir/requires: CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj.requires
 CMakeFiles/TicTacToe.dir/requires: CMakeFiles/TicTacToe.dir/src/textinput.cpp.obj.requires
 CMakeFiles/TicTacToe.dir/requires: CMakeFiles/TicTacToe.dir/src/networkscene.cpp.obj.requires
 

@@ -9,8 +9,6 @@
 #include "window.hpp"
 #include "networkscene.hpp"
 
-//TODO: split up the functions, this is serious cancer
-
 GameScene::GameScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
     layoutTex.loadFromFile("res/layout.png");
     layout.setTexture(layoutTex, false);
@@ -23,6 +21,13 @@ GameScene::GameScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
 
     circleTex.loadFromFile("res/circle.png");
     circleTex.setSmooth(true);
+
+    title.setFont(gameInfo->font);
+    title.setCharacterSize(25);
+    title.setPosition(Window::VWIDTH / 2, 20);
+    auto ir = title.getLocalBounds();
+    title.setOrigin(ir.width / 2, ir.height / 2);
+    title.setFillColor(sf::Color::Black);
 
     player = Map::C_CROSS;
     moveMade = false;
@@ -86,7 +91,6 @@ void GameScene::update(float delta) {
     }
 }
 
-//TODO: make static vars member vars and eleminate the need to set their properties every frame
 void GameScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
     std::stringstream st;
     char winner = map.getWinner();
@@ -111,13 +115,9 @@ void GameScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
         gameOver = true;
     }
 
-    static sf::Text title(st.str(), gameInfo->font, 25);
     title.setString(st.str());
-
-    title.setPosition(Window::VWIDTH / 2, 20);
     auto ir = title.getLocalBounds();
     title.setOrigin(ir.width / 2, ir.height / 2);
-    title.setFillColor(sf::Color::Black);
 
     window->draw(title);
     window->draw(layout);
@@ -127,7 +127,7 @@ void GameScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
         for (int j = 0; j < 3; ++j) {
             char c = map.getAt(i, j);
 
-            if (c == Map::C_CROSS) s.setTexture(crossTex, true);
+            if (c == Map::C_CROSS) s.setTexture(crossTex, true); //very inefficient, since we are binding them so often
             else if (c == Map::C_CIRCLE) s.setTexture(circleTex, true);
             else continue;
 

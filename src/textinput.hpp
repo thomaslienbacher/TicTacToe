@@ -8,9 +8,6 @@
 #include <SFML/Graphics.hpp>
 #include <memory>
 
-/* TODO: maybe implement a better way to limit the amout of chars,
- * for example calculate the width of the text and check if another char would fit
- */
 class TextInput {
     static constexpr float BLINK_TIME = 0.35f;
     static constexpr float PADDING = 6.0f;

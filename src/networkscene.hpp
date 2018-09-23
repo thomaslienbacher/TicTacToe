@@ -12,8 +12,6 @@
 #include "gameinfo.hpp"
 #include "textinput.hpp"
 
-#define PORT 45302
-
 class NetworkScene : public EventHandler {
 public:
 
@@ -21,6 +19,7 @@ public:
         sf::TcpListener listener;
         sf::TcpSocket socket;
         std::string ip;
+        const unsigned short port = 45302;
 
         enum {
             IDLE, GATHERING_INFO, SETUP, LOADING, CONNECTED
@@ -33,6 +32,8 @@ private:
     sf::Texture loadAnimTex;
     TextInput ipInput;
     sf::Sprite loadAnim;
+    sf::Text loadText;
+    sf::Text ipText;
 
     pthread_t thread;
     ThreadInfo threadInfo;
@@ -43,11 +44,10 @@ public:
     void update(float delta);
     void draw(std::shared_ptr<sf::RenderWindow>& window);
     void handle(sf::Event event) override;
-
 };
 
-void *hostControll(void *threadInfo);
-void *clientControll(void *threadInfo);
+void *hostThread(void *threadInfo);
+void *clientThread(void *threadInfo);
 
 
 #endif //TICTACTOE_NETWORKSCENE_HPP

@@ -20,6 +20,20 @@ NetworkScene::NetworkScene(GameInfo *gameInfo)
     auto ir = loadAnim.getTextureRect();
     loadAnim.setOrigin(ir.width / 2, ir.height / 2);
 
+    ipText.setString("Enter IP Address");
+    ipText.setFont(gameInfo->font);
+    ipText.setPosition(Window::VWIDTH / 2, Window::VHEIGHT / 2 - 50);
+    auto fr = ipText.getLocalBounds();
+    ipText.setOrigin(fr.width / 2, fr.height / 2);
+    ipText.setFillColor(sf::Color::Black);
+
+    loadText.setString("Waiting for connection...");
+    loadText.setFont(gameInfo->font);
+    loadText.setPosition(Window::VWIDTH / 2, Window::VHEIGHT / 2 + 100);
+    fr = loadText.getLocalBounds();
+    loadText.setOrigin(fr.width / 2, fr.height / 2);
+    loadText.setFillColor(sf::Color::Black);
+
     threadInfo.state = ThreadInfo::IDLE;
 }
 
@@ -38,15 +52,14 @@ void NetworkScene::update(float delta) {
         }
     }
 
-    //TODO: yield or join threads
     if (threadInfo.state == ThreadInfo::SETUP) {
         if (gameInfo->networkType == HOST) {
-            pthread_create(&thread, NULL, hostControll, &this->threadInfo);
+            pthread_create(&thread, NULL, hostThread, &this->threadInfo);
             gameInfo->me = Map::C_CROSS;
         }
 
         if (gameInfo->networkType == CLIENT) {
-            pthread_create(&thread, NULL, clientControll, &this->threadInfo);
+            pthread_create(&thread, NULL, clientThread, &this->threadInfo);
             gameInfo->me = Map::C_CIRCLE;
         }
 
@@ -58,6 +71,7 @@ void NetworkScene::update(float delta) {
     }
 
     if (threadInfo.state == ThreadInfo::CONNECTED) {
+        pthread_join(thread, NULL);
         gameInfo->gamestate = GAME;
         gameInfo->socket = &threadInfo.socket;
     }
@@ -65,28 +79,18 @@ void NetworkScene::update(float delta) {
 
 void NetworkScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
     if (threadInfo.state == ThreadInfo::GATHERING_INFO) {
-        static sf::Text ipText("Enter IP Address", gameInfo->font);
-
-        ipText.setPosition(Window::VWIDTH / 2, Window::VHEIGHT / 2 - 50);
-        auto ir = ipText.getLocalBounds();
-        ipText.setOrigin(ir.width / 2, ir.height / 2);
-        ipText.setFillColor(sf::Color::Black);
+        auto fr = ipText.getLocalBounds();
+        ipText.setOrigin(fr.width / 2, fr.height / 2);
 
         window->draw(ipText);
-
         ipInput.draw(window);
     }
 
     if (threadInfo.state == ThreadInfo::LOADING) {
+        auto fr = loadText.getLocalBounds();
+        loadText.setOrigin(fr.width / 2, fr.height / 2);
+
         window->draw(loadAnim);
-
-        static sf::Text loadText("Waiting for connection...", gameInfo->font);
-
-        loadText.setPosition(Window::VWIDTH / 2, Window::VHEIGHT / 2 + 100);
-        auto ir = loadText.getLocalBounds();
-        loadText.setOrigin(ir.width / 2, ir.height / 2);
-        loadText.setFillColor(sf::Color::Black);
-
         window->draw(loadText);
     }
 }
@@ -97,24 +101,27 @@ void NetworkScene::handle(sf::Event event) {
     }
 }
 
-//TODO: correct error handling
-void *hostControll(void *threadInfo) {
+//TODO: correct error handling and use return value
+void *hostThread(void *threadInfo) {
     auto ti = (NetworkScene::ThreadInfo*) threadInfo;
-    ti->listener.listen(PORT);
+    ti->listener.listen(ti->port);
 
     if (ti->listener.accept(ti->socket) == sf::Socket::Done) {
         ti->state = NetworkScene::ThreadInfo::CONNECTED;
         ti->socket.setBlocking(false);
+        ti->listener.close();
     } else {
         std::cout << "didnt accept" << std::endl;
     }
+
+    return NULL;
 }
 
-void *clientControll(void *threadInfo) {
+void *clientThread(void *threadInfo) {
     auto ti = (NetworkScene::ThreadInfo*) threadInfo;
 
     while (ti->state != NetworkScene::ThreadInfo::CONNECTED) {
-        if (ti->socket.connect(ti->ip, PORT) == sf::Socket::Done) {
+        if (ti->socket.connect(ti->ip, ti->port) == sf::Socket::Done) {
             ti->state = NetworkScene::ThreadInfo::CONNECTED;
             ti->socket.setBlocking(false);
 
@@ -124,4 +131,6 @@ void *clientControll(void *threadInfo) {
 
         sf::sleep(sf::milliseconds(200));
     }
+
+    return NULL;
 }

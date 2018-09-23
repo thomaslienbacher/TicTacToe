@@ -78,83 +78,6 @@ CMakeFiles/TicTacToe.dir/src/button.cpp.obj
  ../libs/sfml/include/SFML/Window/WindowStyle.hpp
  E:/Thomas/Repositories/TicTacToe/src/button.cpp
  E:/Thomas/Repositories/TicTacToe/src/button.hpp
-CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj
- ../libs/sfml/include/SFML/Config.hpp
- ../libs/sfml/include/SFML/Graphics.hpp
- ../libs/sfml/include/SFML/Graphics/BlendMode.hpp
- ../libs/sfml/include/SFML/Graphics/CircleShape.hpp
- ../libs/sfml/include/SFML/Graphics/Color.hpp
- ../libs/sfml/include/SFML/Graphics/ConvexShape.hpp
- ../libs/sfml/include/SFML/Graphics/Drawable.hpp
- ../libs/sfml/include/SFML/Graphics/Export.hpp
- ../libs/sfml/include/SFML/Graphics/Font.hpp
- ../libs/sfml/include/SFML/Graphics/Glsl.hpp
- ../libs/sfml/include/SFML/Graphics/Glsl.inl
- ../libs/sfml/include/SFML/Graphics/Glyph.hpp
- ../libs/sfml/include/SFML/Graphics/Image.hpp
- ../libs/sfml/include/SFML/Graphics/PrimitiveType.hpp
- ../libs/sfml/include/SFML/Graphics/Rect.hpp
- ../libs/sfml/include/SFML/Graphics/Rect.inl
- ../libs/sfml/include/SFML/Graphics/RectangleShape.hpp
- ../libs/sfml/include/SFML/Graphics/RenderStates.hpp
- ../libs/sfml/include/SFML/Graphics/RenderTarget.hpp
- ../libs/sfml/include/SFML/Graphics/RenderTexture.hpp
- ../libs/sfml/include/SFML/Graphics/RenderWindow.hpp
- ../libs/sfml/include/SFML/Graphics/Shader.hpp
- ../libs/sfml/include/SFML/Graphics/Shape.hpp
- ../libs/sfml/include/SFML/Graphics/Sprite.hpp
- ../libs/sfml/include/SFML/Graphics/Text.hpp
- ../libs/sfml/include/SFML/Graphics/Texture.hpp
- ../libs/sfml/include/SFML/Graphics/Transform.hpp
- ../libs/sfml/include/SFML/Graphics/Transformable.hpp
- ../libs/sfml/include/SFML/Graphics/Vertex.hpp
- ../libs/sfml/include/SFML/Graphics/VertexArray.hpp
- ../libs/sfml/include/SFML/Graphics/VertexBuffer.hpp
- ../libs/sfml/include/SFML/Graphics/View.hpp
- ../libs/sfml/include/SFML/System.hpp
- ../libs/sfml/include/SFML/System/Clock.hpp
- ../libs/sfml/include/SFML/System/Err.hpp
- ../libs/sfml/include/SFML/System/Export.hpp
- ../libs/sfml/include/SFML/System/FileInputStream.hpp
- ../libs/sfml/include/SFML/System/InputStream.hpp
- ../libs/sfml/include/SFML/System/Lock.hpp
- ../libs/sfml/include/SFML/System/MemoryInputStream.hpp
- ../libs/sfml/include/SFML/System/Mutex.hpp
- ../libs/sfml/include/SFML/System/NonCopyable.hpp
- ../libs/sfml/include/SFML/System/Sleep.hpp
- ../libs/sfml/include/SFML/System/String.hpp
- ../libs/sfml/include/SFML/System/String.inl
- ../libs/sfml/include/SFML/System/Thread.hpp
- ../libs/sfml/include/SFML/System/Thread.inl
- ../libs/sfml/include/SFML/System/ThreadLocal.hpp
- ../libs/sfml/include/SFML/System/ThreadLocalPtr.hpp
- ../libs/sfml/include/SFML/System/ThreadLocalPtr.inl
- ../libs/sfml/include/SFML/System/Time.hpp
- ../libs/sfml/include/SFML/System/Utf.hpp
- ../libs/sfml/include/SFML/System/Utf.inl
- ../libs/sfml/include/SFML/System/Vector2.hpp
- ../libs/sfml/include/SFML/System/Vector2.inl
- ../libs/sfml/include/SFML/System/Vector3.hpp
- ../libs/sfml/include/SFML/System/Vector3.inl
- ../libs/sfml/include/SFML/Window.hpp
- ../libs/sfml/include/SFML/Window/Clipboard.hpp
- ../libs/sfml/include/SFML/Window/Context.hpp
- ../libs/sfml/include/SFML/Window/ContextSettings.hpp
- ../libs/sfml/include/SFML/Window/Cursor.hpp
- ../libs/sfml/include/SFML/Window/Event.hpp
- ../libs/sfml/include/SFML/Window/Export.hpp
- ../libs/sfml/include/SFML/Window/GlResource.hpp
- ../libs/sfml/include/SFML/Window/Joystick.hpp
- ../libs/sfml/include/SFML/Window/Keyboard.hpp
- ../libs/sfml/include/SFML/Window/Mouse.hpp
- ../libs/sfml/include/SFML/Window/Sensor.hpp
- ../libs/sfml/include/SFML/Window/Touch.hpp
- ../libs/sfml/include/SFML/Window/VideoMode.hpp
- ../libs/sfml/include/SFML/Window/Window.hpp
- ../libs/sfml/include/SFML/Window/WindowHandle.hpp
- ../libs/sfml/include/SFML/Window/WindowStyle.hpp
- E:/Thomas/Repositories/TicTacToe/src/eventhandler.cpp
- E:/Thomas/Repositories/TicTacToe/src/eventhandler.hpp
 CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj
  ../libs/sfml/include/SFML/Config.hpp
  ../libs/sfml/include/SFML/Graphics.hpp
@@ -249,6 +172,7 @@ CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj
  E:/Thomas/Repositories/TicTacToe/src/gamescene.cpp
  E:/Thomas/Repositories/TicTacToe/src/gamescene.hpp
  E:/Thomas/Repositories/TicTacToe/src/map.hpp
+ E:/Thomas/Repositories/TicTacToe/src/networkscene.hpp
  E:/Thomas/Repositories/TicTacToe/src/textinput.hpp
  E:/Thomas/Repositories/TicTacToe/src/window.hpp
 CMakeFiles/TicTacToe.dir/src/main.cpp.obj
@@ -346,6 +270,7 @@ CMakeFiles/TicTacToe.dir/src/main.cpp.obj
  E:/Thomas/Repositories/TicTacToe/src/main.cpp
  E:/Thomas/Repositories/TicTacToe/src/map.hpp
  E:/Thomas/Repositories/TicTacToe/src/menuscene.hpp
+ E:/Thomas/Repositories/TicTacToe/src/networkscene.hpp
  E:/Thomas/Repositories/TicTacToe/src/textinput.hpp
  E:/Thomas/Repositories/TicTacToe/src/window.hpp
 CMakeFiles/TicTacToe.dir/src/map.cpp.obj
@@ -384,6 +309,18 @@ CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj
  ../libs/sfml/include/SFML/Graphics/VertexArray.hpp
  ../libs/sfml/include/SFML/Graphics/VertexBuffer.hpp
  ../libs/sfml/include/SFML/Graphics/View.hpp
+ ../libs/sfml/include/SFML/Network.hpp
+ ../libs/sfml/include/SFML/Network/Export.hpp
+ ../libs/sfml/include/SFML/Network/Ftp.hpp
+ ../libs/sfml/include/SFML/Network/Http.hpp
+ ../libs/sfml/include/SFML/Network/IpAddress.hpp
+ ../libs/sfml/include/SFML/Network/Packet.hpp
+ ../libs/sfml/include/SFML/Network/Socket.hpp
+ ../libs/sfml/include/SFML/Network/SocketHandle.hpp
+ ../libs/sfml/include/SFML/Network/SocketSelector.hpp
+ ../libs/sfml/include/SFML/Network/TcpListener.hpp
+ ../libs/sfml/include/SFML/Network/TcpSocket.hpp
+ ../libs/sfml/include/SFML/Network/UdpSocket.hpp
  ../libs/sfml/include/SFML/System.hpp
  ../libs/sfml/include/SFML/System/Clock.hpp
  ../libs/sfml/include/SFML/System/Err.hpp
@@ -431,6 +368,100 @@ CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj
  E:/Thomas/Repositories/TicTacToe/src/gameinfo.hpp
  E:/Thomas/Repositories/TicTacToe/src/menuscene.cpp
  E:/Thomas/Repositories/TicTacToe/src/menuscene.hpp
+ E:/Thomas/Repositories/TicTacToe/src/window.hpp
+CMakeFiles/TicTacToe.dir/src/networkscene.cpp.obj
+ ../libs/sfml/include/SFML/Config.hpp
+ ../libs/sfml/include/SFML/Graphics.hpp
+ ../libs/sfml/include/SFML/Graphics/BlendMode.hpp
+ ../libs/sfml/include/SFML/Graphics/CircleShape.hpp
+ ../libs/sfml/include/SFML/Graphics/Color.hpp
+ ../libs/sfml/include/SFML/Graphics/ConvexShape.hpp
+ ../libs/sfml/include/SFML/Graphics/Drawable.hpp
+ ../libs/sfml/include/SFML/Graphics/Export.hpp
+ ../libs/sfml/include/SFML/Graphics/Font.hpp
+ ../libs/sfml/include/SFML/Graphics/Glsl.hpp
+ ../libs/sfml/include/SFML/Graphics/Glsl.inl
+ ../libs/sfml/include/SFML/Graphics/Glyph.hpp
+ ../libs/sfml/include/SFML/Graphics/Image.hpp
+ ../libs/sfml/include/SFML/Graphics/PrimitiveType.hpp
+ ../libs/sfml/include/SFML/Graphics/Rect.hpp
+ ../libs/sfml/include/SFML/Graphics/Rect.inl
+ ../libs/sfml/include/SFML/Graphics/RectangleShape.hpp
+ ../libs/sfml/include/SFML/Graphics/RenderStates.hpp
+ ../libs/sfml/include/SFML/Graphics/RenderTarget.hpp
+ ../libs/sfml/include/SFML/Graphics/RenderTexture.hpp
+ ../libs/sfml/include/SFML/Graphics/RenderWindow.hpp
+ ../libs/sfml/include/SFML/Graphics/Shader.hpp
+ ../libs/sfml/include/SFML/Graphics/Shape.hpp
+ ../libs/sfml/include/SFML/Graphics/Sprite.hpp
+ ../libs/sfml/include/SFML/Graphics/Text.hpp
+ ../libs/sfml/include/SFML/Graphics/Texture.hpp
+ ../libs/sfml/include/SFML/Graphics/Transform.hpp
+ ../libs/sfml/include/SFML/Graphics/Transformable.hpp
+ ../libs/sfml/include/SFML/Graphics/Vertex.hpp
+ ../libs/sfml/include/SFML/Graphics/VertexArray.hpp
+ ../libs/sfml/include/SFML/Graphics/VertexBuffer.hpp
+ ../libs/sfml/include/SFML/Graphics/View.hpp
+ ../libs/sfml/include/SFML/Network.hpp
+ ../libs/sfml/include/SFML/Network/Export.hpp
+ ../libs/sfml/include/SFML/Network/Ftp.hpp
+ ../libs/sfml/include/SFML/Network/Http.hpp
+ ../libs/sfml/include/SFML/Network/IpAddress.hpp
+ ../libs/sfml/include/SFML/Network/Packet.hpp
+ ../libs/sfml/include/SFML/Network/Socket.hpp
+ ../libs/sfml/include/SFML/Network/SocketHandle.hpp
+ ../libs/sfml/include/SFML/Network/SocketSelector.hpp
+ ../libs/sfml/include/SFML/Network/TcpListener.hpp
+ ../libs/sfml/include/SFML/Network/TcpSocket.hpp
+ ../libs/sfml/include/SFML/Network/UdpSocket.hpp
+ ../libs/sfml/include/SFML/System.hpp
+ ../libs/sfml/include/SFML/System/Clock.hpp
+ ../libs/sfml/include/SFML/System/Err.hpp
+ ../libs/sfml/include/SFML/System/Export.hpp
+ ../libs/sfml/include/SFML/System/FileInputStream.hpp
+ ../libs/sfml/include/SFML/System/InputStream.hpp
+ ../libs/sfml/include/SFML/System/Lock.hpp
+ ../libs/sfml/include/SFML/System/MemoryInputStream.hpp
+ ../libs/sfml/include/SFML/System/Mutex.hpp
+ ../libs/sfml/include/SFML/System/NonCopyable.hpp
+ ../libs/sfml/include/SFML/System/Sleep.hpp
+ ../libs/sfml/include/SFML/System/String.hpp
+ ../libs/sfml/include/SFML/System/String.inl
+ ../libs/sfml/include/SFML/System/Thread.hpp
+ ../libs/sfml/include/SFML/System/Thread.inl
+ ../libs/sfml/include/SFML/System/ThreadLocal.hpp
+ ../libs/sfml/include/SFML/System/ThreadLocalPtr.hpp
+ ../libs/sfml/include/SFML/System/ThreadLocalPtr.inl
+ ../libs/sfml/include/SFML/System/Time.hpp
+ ../libs/sfml/include/SFML/System/Utf.hpp
+ ../libs/sfml/include/SFML/System/Utf.inl
+ ../libs/sfml/include/SFML/System/Vector2.hpp
+ ../libs/sfml/include/SFML/System/Vector2.inl
+ ../libs/sfml/include/SFML/System/Vector3.hpp
+ ../libs/sfml/include/SFML/System/Vector3.inl
+ ../libs/sfml/include/SFML/Window.hpp
+ ../libs/sfml/include/SFML/Window/Clipboard.hpp
+ ../libs/sfml/include/SFML/Window/Context.hpp
+ ../libs/sfml/include/SFML/Window/ContextSettings.hpp
+ ../libs/sfml/include/SFML/Window/Cursor.hpp
+ ../libs/sfml/include/SFML/Window/Event.hpp
+ ../libs/sfml/include/SFML/Window/Export.hpp
+ ../libs/sfml/include/SFML/Window/GlResource.hpp
+ ../libs/sfml/include/SFML/Window/Joystick.hpp
+ ../libs/sfml/include/SFML/Window/Keyboard.hpp
+ ../libs/sfml/include/SFML/Window/Mouse.hpp
+ ../libs/sfml/include/SFML/Window/Sensor.hpp
+ ../libs/sfml/include/SFML/Window/Touch.hpp
+ ../libs/sfml/include/SFML/Window/VideoMode.hpp
+ ../libs/sfml/include/SFML/Window/Window.hpp
+ ../libs/sfml/include/SFML/Window/WindowHandle.hpp
+ ../libs/sfml/include/SFML/Window/WindowStyle.hpp
+ E:/Thomas/Repositories/TicTacToe/src/eventhandler.hpp
+ E:/Thomas/Repositories/TicTacToe/src/gameinfo.hpp
+ E:/Thomas/Repositories/TicTacToe/src/map.hpp
+ E:/Thomas/Repositories/TicTacToe/src/networkscene.cpp
+ E:/Thomas/Repositories/TicTacToe/src/networkscene.hpp
+ E:/Thomas/Repositories/TicTacToe/src/textinput.hpp
  E:/Thomas/Repositories/TicTacToe/src/window.hpp
 CMakeFiles/TicTacToe.dir/src/textinput.cpp.obj
  ../libs/sfml/include/SFML/Config.hpp

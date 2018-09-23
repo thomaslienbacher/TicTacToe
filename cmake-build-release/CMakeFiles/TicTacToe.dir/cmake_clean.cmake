@@ -5,7 +5,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/TicTacToe.dir/src/button.cpp.obj"
   "CMakeFiles/TicTacToe.dir/src/gamescene.cpp.obj"
   "CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj"
-  "CMakeFiles/TicTacToe.dir/src/eventhandler.cpp.obj"
   "CMakeFiles/TicTacToe.dir/src/textinput.cpp.obj"
   "CMakeFiles/TicTacToe.dir/src/networkscene.cpp.obj"
   "TicTacToe.pdb"

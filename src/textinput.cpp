@@ -37,7 +37,7 @@ void TextInput::handle(sf::Event &event) {
             } else if (event.text.unicode == 13) { // enter
                 entered = true;
             } else {
-                if (canCharFit() && !limitReached) raw += event.text.unicode;
+                if (canCharFit() && !limitReached) raw += (char)event.text.unicode;
             }
         }
     }

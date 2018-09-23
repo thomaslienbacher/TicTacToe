@@ -5,11 +5,7 @@
 #include "map.hpp"
 
 Map::Map() {
-    for (int i = 0; i < 3; ++i) {
-        for (int j = 0; j < 3; ++j) {
-            map[i][j] = 0;
-        }
-    }
+    reset();
 }
 
 bool Map::setAt(int x, int y, char type) {

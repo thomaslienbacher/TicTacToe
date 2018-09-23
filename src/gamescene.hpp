@@ -16,19 +16,15 @@
 #include <memory>
 #include <pthread.h>
 
-//TODO: correctly asign either defines or constexpr type constants
-#define RESET_TIME 5.0f
-
-//TODO: cleanup this class
 class GameScene : public EventHandler {
-
-    //TODO: seperate gamescene from networking stuff and create a scene for that
+    static constexpr float RESET_TIME = 5.0f;
 
     GameInfo *gameInfo;
     sf::Texture crossTex;
     sf::Texture circleTex;
     sf::Texture layoutTex;
     sf::Sprite layout;
+    sf::Text title;
 
     Map map;
     Button mapButtons[3][3];
@@ -41,7 +37,6 @@ class GameScene : public EventHandler {
 
 public:
     explicit GameScene(GameInfo *gameInfo);
-    //TODO: create a proper destructor then close sockets, kill threads, free resources
 
     void update(float delta);
     void draw(std::shared_ptr<sf::RenderWindow>& window);

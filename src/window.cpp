@@ -30,6 +30,9 @@ float Window::update() {
             window->close();
         }
 
+        if(event.type == sf::Event::GainedFocus) focused = true;
+        if(event.type == sf::Event::LostFocus) focused = false;
+
         for(EventHandler* handler : eventHandlers) handler->handle(event);
     }
 
@@ -54,4 +57,8 @@ void Window::addEventHandler(EventHandler *handler) {
 
 std::shared_ptr<sf::RenderWindow> &Window::getWindow() {
     return window;
+}
+
+bool Window::isFocused() const {
+    return focused;
 }
