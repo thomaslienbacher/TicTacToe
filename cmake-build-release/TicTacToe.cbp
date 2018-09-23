@@ -122,6 +122,12 @@
 		<Unit filename="E:/Thomas/Repositories/TicTacToe/src/menuscene.hpp">
 			<Option target="TicTacToe"/>
 		</Unit>
+		<Unit filename="E:/Thomas/Repositories/TicTacToe/src/networkscene.cpp">
+			<Option target="TicTacToe"/>
+		</Unit>
+		<Unit filename="E:/Thomas/Repositories/TicTacToe/src/networkscene.hpp">
+			<Option target="TicTacToe"/>
+		</Unit>
 		<Unit filename="E:/Thomas/Repositories/TicTacToe/src/textinput.cpp">
 			<Option target="TicTacToe"/>
 		</Unit>

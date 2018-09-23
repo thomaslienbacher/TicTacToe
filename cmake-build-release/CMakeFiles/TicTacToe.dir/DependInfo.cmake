@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "E:/Thomas/Repositories/TicTacToe/src/main.cpp" "E:/Thomas/Repositories/TicTacToe/cmake-build-release/CMakeFiles/TicTacToe.dir/src/main.cpp.obj"
   "E:/Thomas/Repositories/TicTacToe/src/map.cpp" "E:/Thomas/Repositories/TicTacToe/cmake-build-release/CMakeFiles/TicTacToe.dir/src/map.cpp.obj"
   "E:/Thomas/Repositories/TicTacToe/src/menuscene.cpp" "E:/Thomas/Repositories/TicTacToe/cmake-build-release/CMakeFiles/TicTacToe.dir/src/menuscene.cpp.obj"
+  "E:/Thomas/Repositories/TicTacToe/src/networkscene.cpp" "E:/Thomas/Repositories/TicTacToe/cmake-build-release/CMakeFiles/TicTacToe.dir/src/networkscene.cpp.obj"
   "E:/Thomas/Repositories/TicTacToe/src/textinput.cpp" "E:/Thomas/Repositories/TicTacToe/cmake-build-release/CMakeFiles/TicTacToe.dir/src/textinput.cpp.obj"
   "E:/Thomas/Repositories/TicTacToe/src/window.cpp" "E:/Thomas/Repositories/TicTacToe/cmake-build-release/CMakeFiles/TicTacToe.dir/src/window.cpp.obj"
   )

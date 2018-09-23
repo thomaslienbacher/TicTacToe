@@ -284,6 +284,33 @@ src/menuscene.cpp.s:
 	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/menuscene.cpp.s
 .PHONY : src/menuscene.cpp.s
 
+src/networkscene.obj: src/networkscene.cpp.obj
+
+.PHONY : src/networkscene.obj
+
+# target to build an object file
+src/networkscene.cpp.obj:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/networkscene.cpp.obj
+.PHONY : src/networkscene.cpp.obj
+
+src/networkscene.i: src/networkscene.cpp.i
+
+.PHONY : src/networkscene.i
+
+# target to preprocess a source file
+src/networkscene.cpp.i:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/networkscene.cpp.i
+.PHONY : src/networkscene.cpp.i
+
+src/networkscene.s: src/networkscene.cpp.s
+
+.PHONY : src/networkscene.s
+
+# target to generate assembly for a file
+src/networkscene.cpp.s:
+	$(MAKE) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/src/networkscene.cpp.s
+.PHONY : src/networkscene.cpp.s
+
 src/textinput.obj: src/textinput.cpp.obj
 
 .PHONY : src/textinput.obj
@@ -365,6 +392,9 @@ help:
 	@echo ... src/menuscene.obj
 	@echo ... src/menuscene.i
 	@echo ... src/menuscene.s
+	@echo ... src/networkscene.obj
+	@echo ... src/networkscene.i
+	@echo ... src/networkscene.s
 	@echo ... src/textinput.obj
 	@echo ... src/textinput.i
 	@echo ... src/textinput.s

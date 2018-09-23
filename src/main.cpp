@@ -1,6 +1,7 @@
 #include "window.hpp"
 #include "gamescene.hpp"
 #include "menuscene.hpp"
+#include "networkscene.hpp"
 
 int main() {
     GameInfo gameInfo;
@@ -9,9 +10,11 @@ int main() {
     Window window("Tic Tac Toe");
 
     MenuScene menuScene(&gameInfo);
+    NetworkScene networkScene(&gameInfo);
     GameScene gameScene(&gameInfo);
 
     window.addEventHandler(&menuScene);
+    window.addEventHandler(&networkScene);
     window.addEventHandler(&gameScene);
 
     gameInfo.font.loadFromFile("res/roboto.ttf");
@@ -22,6 +25,10 @@ int main() {
         float delta = window.update();
         //update
 
+        if(gameInfo.gamestate == NETWORK) {
+            networkScene.update(delta);
+        }
+
         if(gameInfo.gamestate == GAME) {
             gameScene.update(delta);
         }
@@ -29,9 +36,14 @@ int main() {
         window.prepare();
         //render
 
+        if(gameInfo.gamestate == NETWORK) {
+            networkScene.draw(window.getWindow());
+        }
+
         if(gameInfo.gamestate == MENU) {
             menuScene.draw(window.getWindow());
         }
+
         if(gameInfo.gamestate == GAME) {
             gameScene.draw(window.getWindow());
         }

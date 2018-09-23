@@ -14,7 +14,7 @@ MenuScene::MenuScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
     playHostButton.setPosition({Window::VWIDTH / 2, Window::VHEIGHT / 4});
     playHostButton.setFont(gameInfo->font);
     playHostButton.setOnclick([gameInfo]{
-        gameInfo->gamestate = GAME;
+        gameInfo->gamestate = NETWORK;
         gameInfo->networkType = HOST;
     });
 
@@ -23,7 +23,7 @@ MenuScene::MenuScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
     playClientButton.setPosition({Window::VWIDTH / 2, Window::VHEIGHT / 4.0f*3.0f});
     playClientButton.setFont(gameInfo->font);
     playClientButton.setOnclick([gameInfo]{
-        gameInfo->gamestate = GAME;
+        gameInfo->gamestate = NETWORK;
         gameInfo->networkType = CLIENT;
     });
 }
