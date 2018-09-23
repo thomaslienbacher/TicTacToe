@@ -51,7 +51,6 @@ int main() {
             gameScene.draw(window.getWindow());
         }
 
-
         window.display();
     }
 

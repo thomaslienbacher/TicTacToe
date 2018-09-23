@@ -111,7 +111,7 @@ void *hostThread(void *threadInfo) {
         ti->socket.setBlocking(false);
         ti->listener.close();
     } else {
-        std::cout << "didnt accept" << std::endl;
+        std::cerr << "Couldn't accept the client!" << std::endl;
     }
 
     return NULL;
@@ -126,7 +126,7 @@ void *clientThread(void *threadInfo) {
             ti->socket.setBlocking(false);
 
         } else {
-            std::cout << "didnt connect" << std::endl;
+            std::cerr << "Couldn't connect to a host!" << std::endl;
         }
 
         sf::sleep(sf::milliseconds(200));
