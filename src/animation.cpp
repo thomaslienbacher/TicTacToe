@@ -30,6 +30,7 @@ void Animation::setFps(float fps) {
     swapTime = 1.0f/fps;
 }
 
+//TODO: clear regions
 void Animation::setTexture(sf::Texture &texture, int rows, int cols) {
     sprite.setTexture(texture);
     int w = (int)texture.getSize().x / cols;

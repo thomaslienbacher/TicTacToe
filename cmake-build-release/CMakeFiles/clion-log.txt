@@ -1,6 +1,6 @@
-"E:\Programme\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - MinGW Makefiles" E:\Thomas\Repositories\TicTacToe
--- The C compiler identification is GNU 5.3.0
--- The CXX compiler identification is GNU 5.3.0
+C:\Users\Thomas\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - MinGW Makefiles" "C:\Eigene Dateien\Programmieren\C++\CLion-Workspace\TicTacToe"
+-- The C compiler identification is GNU 6.3.0
+-- The CXX compiler identification is GNU 6.3.0
 -- Check for working C compiler: C:/MinGW/bin/gcc.exe
 -- Check for working C compiler: C:/MinGW/bin/gcc.exe -- works
 -- Detecting C compiler ABI info
@@ -15,4 +15,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: E:/Thomas/Repositories/TicTacToe/cmake-build-release
+-- Build files have been written to: C:/Eigene Dateien/Programmieren/C++/CLion-Workspace/TicTacToe/cmake-build-release
