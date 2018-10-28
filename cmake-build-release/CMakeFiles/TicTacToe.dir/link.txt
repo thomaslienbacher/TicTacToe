@@ -1,3 +1,0 @@
-C:\Users\Thomas\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\TicTacToe.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\TicTacToe.dir/objects.a @CMakeFiles\TicTacToe.dir\objects1.rsp
-C:\MinGW\bin\g++.exe  -pthread -mwindows -Wall -Wextra -O3 -DNDEBUG   -Wl,--whole-archive CMakeFiles\TicTacToe.dir/objects.a -Wl,--no-whole-archive  -o TicTacToe.exe -Wl,--out-implib,libTicTacToe.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\TicTacToe.dir\linklibs.rsp
