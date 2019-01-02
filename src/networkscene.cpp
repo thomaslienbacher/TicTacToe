@@ -6,6 +6,7 @@
 #include "window.hpp"
 #include "map.hpp"
 #include <iostream>
+#include <cmath>
 
 NetworkScene::NetworkScene(GameInfo *gameInfo)
 : gameInfo(gameInfo) {
@@ -22,16 +23,16 @@ NetworkScene::NetworkScene(GameInfo *gameInfo)
 
     ipText.setString("Enter IP Address");
     ipText.setFont(gameInfo->font);
-    ipText.setPosition(Window::VWIDTH / 2, Window::VHEIGHT / 2 - 50);
+    ipText.setPosition(std::lroundf(Window::VWIDTH / 2), std::lroundf(Window::VHEIGHT / 2 - 50));
     auto fr = ipText.getLocalBounds();
-    ipText.setOrigin(fr.width / 2, fr.height / 2);
+    ipText.setOrigin(std::lroundf(fr.width / 2), std::lroundf(fr.height / 2));
     ipText.setFillColor(sf::Color::Black);
 
     loadText.setString("Waiting for connection...");
     loadText.setFont(gameInfo->font);
-    loadText.setPosition(Window::VWIDTH / 2, Window::VHEIGHT / 2 + 100);
+    loadText.setPosition(std::lroundf(Window::VWIDTH / 2), std::lroundf(Window::VHEIGHT / 2 + 100));
     fr = loadText.getLocalBounds();
-    loadText.setOrigin(fr.width / 2, fr.height / 2);
+    loadText.setOrigin(std::lroundf(fr.width / 2), std::lroundf(fr.height / 2));
     loadText.setFillColor(sf::Color::Black);
 
     threadInfo.state = ThreadInfo::IDLE;
@@ -80,7 +81,7 @@ void NetworkScene::update(float delta) {
 void NetworkScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
     if (threadInfo.state == ThreadInfo::GATHERING_INFO) {
         auto fr = ipText.getLocalBounds();
-        ipText.setOrigin(fr.width / 2, fr.height / 2);
+        ipText.setOrigin(std::lroundf(fr.width / 2), std::lroundf(fr.height / 2));
 
         window->draw(ipText);
         ipInput.draw(window);
@@ -88,7 +89,7 @@ void NetworkScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
 
     if (threadInfo.state == ThreadInfo::LOADING) {
         auto fr = loadText.getLocalBounds();
-        loadText.setOrigin(fr.width / 2, fr.height / 2);
+        loadText.setOrigin(std::lroundf(fr.width / 2), std::lroundf(fr.height / 2));
 
         window->draw(loadAnim);
         window->draw(loadText);

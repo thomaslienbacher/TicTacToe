@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "textinput.hpp"
+#include <cmath>
 
 void TextInput::update(float delta) {
     time += delta;
@@ -65,7 +66,7 @@ void TextInput::setSize(sf::FloatRect floatRect) {
     box.setPosition(size.left, size.top);
     box.setSize({size.width, size.height});
 
-    text.setPosition(size.left + PADDING, size.top + size.height / 2 - text.getCharacterSize() / 2);
+    text.setPosition(std::lroundf(size.left + PADDING), std::lroundf(size.top + size.height / 2 - text.getCharacterSize() / 2));
 }
 bool TextInput::isEntered() const {
     return entered;

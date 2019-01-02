@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <iostream>
 #include <sstream>
+#include <cmath>
 #include "gamescene.hpp"
 #include "window.hpp"
 #include "networkscene.hpp"
@@ -13,8 +14,8 @@ GameScene::GameScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
     layoutTex.loadFromFile("res/layout.png");
     layout.setTexture(layoutTex, false);
     auto sr = layoutTex.getSize();
-    layout.setOrigin(sr.x / 2, sr.y / 2);
-    layout.setPosition(Window::VWIDTH / 2, Window::VHEIGHT / 2 + 30);
+    layout.setOrigin(std::lroundf(sr.x / 2), std::lroundf(sr.y / 2));
+    layout.setPosition(std::lroundf(Window::VWIDTH / 2), std::lroundf(Window::VHEIGHT / 2 + 30));
 
     crossTex.loadFromFile("res/cross.png");
     crossTex.setSmooth(true);
@@ -24,9 +25,9 @@ GameScene::GameScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
 
     title.setFont(gameInfo->font);
     title.setCharacterSize(25);
-    title.setPosition(Window::VWIDTH / 2, 20);
+    title.setPosition(std::lroundf(Window::VWIDTH / 2), 20);
     auto ir = title.getLocalBounds();
-    title.setOrigin(ir.width / 2, ir.height / 2);
+    title.setOrigin(std::lroundf(ir.width / 2), std::lroundf(ir.height / 2));
     title.setFillColor(sf::Color::Black);
 
     player = Map::C_CROSS;
@@ -111,13 +112,13 @@ void GameScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
             st << "Draw!";
         }
 
-        st << "  -  Reset in " << std::fixed << std::setprecision(2) << (RESET_TIME - time) << "s";
+        st << "  -  Reset in " << std::fixed << std::setprecision(1) << (RESET_TIME - time) << "s";
         gameOver = true;
     }
 
     title.setString(st.str());
     auto ir = title.getLocalBounds();
-    title.setOrigin(ir.width / 2, ir.height / 2);
+    title.setOrigin(std::lroundf(ir.width / 2), std::lroundf(ir.height / 2));
 
     window->draw(title);
     window->draw(layout);

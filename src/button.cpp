@@ -3,6 +3,7 @@
 //
 
 #include "button.hpp"
+#include <cmath>
 
 Button::Button(std::string text, sf::Texture texture, sf::Vector2f position, std::function<void()> onclick)
 : sprite(texture), onclick(onclick) {
@@ -21,7 +22,7 @@ void Button::draw(std::shared_ptr<sf::RenderWindow> &window) {
     }
 
     auto gb = text.getGlobalBounds();
-    text.setPosition(sprite.getPosition().x- gb.width / 2, sprite.getPosition().y - gb.height / 2);
+    text.setPosition(std::lroundf(sprite.getPosition().x- gb.width / 2), std::lroundf(sprite.getPosition().y - gb.height / 2));
     text.setFillColor(sf::Color::Black);
 
     window->draw(sprite);
@@ -50,8 +51,8 @@ void Button::setText(const std::string &text) {
 
 void Button::setTexture(const sf::Texture &texture) {
     sprite.setTexture(texture, true);
-    const sf::IntRect& ir = sprite.getTextureRect();
-    sprite.setOrigin(ir.width / 2, ir.height / 2);
+    auto &ir = sprite.getTextureRect();
+    sprite.setOrigin(std::lroundf(ir.width / 2), std::lroundf(ir.height / 2));
 }
 
 const sf::FloatRect Button::getBounds() const {
