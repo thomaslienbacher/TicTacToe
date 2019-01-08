@@ -14,8 +14,8 @@ GameScene::GameScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
     layoutTex.loadFromFile("res/layout.png");
     layout.setTexture(layoutTex, false);
     auto sr = layoutTex.getSize();
-    layout.setOrigin(std::lroundf(sr.x / 2), std::lroundf(sr.y / 2));
-    layout.setPosition(std::lroundf(Window::VWIDTH / 2), std::lroundf(Window::VHEIGHT / 2 + 30));
+    layout.setOrigin(sr.x / 2, sr.y / 2);
+    layout.setPosition(Window::VWIDTH / 2, Window::VHEIGHT / 2 + 30);
 
     crossTex.loadFromFile("res/cross.png");
     crossTex.setSmooth(true);

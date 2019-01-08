@@ -21,39 +21,23 @@ char Map::getAt(int x, int y) {
     return map[x][y];
 }
 
-#define X(x, y) map[x][y]==C_CROSS
-#define O(x, y) map[x][y]==C_CIRCLE
-
 char Map::getWinner() {
-    //x winner
-    if(X(0,0) && X(0,1) && X(0,2)) return C_CROSS;
-    if(X(1,0) && X(1,1) && X(1,2)) return C_CROSS;
-    if(X(2,0) && X(2,1) && X(2,2)) return C_CROSS;
+    //check horizontal and vertical
+    for (int i = 0; i < 3; ++i) {
+        if (map[i][0] == C_CIRCLE && map[i][1] == C_CIRCLE && map[i][2] == C_CIRCLE) return C_CIRCLE;
+        if (map[0][i] == C_CIRCLE && map[1][i] == C_CIRCLE && map[2][i] == C_CIRCLE) return C_CIRCLE;
+        if (map[i][0] == C_CROSS && map[i][1] == C_CROSS && map[i][2] == C_CROSS) return C_CROSS;
+        if (map[0][i] == C_CROSS && map[1][i] == C_CROSS && map[2][i] == C_CROSS) return C_CROSS;
+    }
 
-    if(X(0,0) && X(1,0) && X(2,0)) return C_CROSS;
-    if(X(0,1) && X(1,1) && X(2,1)) return C_CROSS;
-    if(X(0,2) && X(1,2) && X(2,2)) return C_CROSS;
-
-    if(X(0,0) && X(1,1) && X(2,2)) return C_CROSS;
-    if(X(0,2) && X(1,1) && X(2,0)) return C_CROSS;
-
-    //o winner
-    if(O(0,0) && O(0,1) && O(0,2)) return C_CIRCLE;
-    if(O(1,0) && O(1,1) && O(1,2)) return C_CIRCLE;
-    if(O(2,0) && O(2,1) && O(2,2)) return C_CIRCLE;
-
-    if(O(0,0) && O(1,0) && O(2,0)) return C_CIRCLE;
-    if(O(0,1) && O(1,1) && O(2,1)) return C_CIRCLE;
-    if(O(0,2) && O(1,2) && O(2,2)) return C_CIRCLE;
-
-    if(O(0,0) && O(1,1) && O(2,2)) return C_CIRCLE;
-    if(O(0,2) && O(1,1) && O(2,0)) return C_CIRCLE;
+    //check diagonal
+    if (map[0][0] == C_CIRCLE && map[1][1] == C_CIRCLE && map[2][2] == C_CIRCLE) return C_CIRCLE;
+    if (map[0][2] == C_CIRCLE && map[1][1] == C_CIRCLE && map[2][0] == C_CIRCLE) return C_CIRCLE;
+    if (map[0][0] == C_CROSS && map[1][1] == C_CROSS && map[2][2] == C_CROSS) return C_CROSS;
+    if (map[0][2] == C_CROSS && map[1][1] == C_CROSS && map[2][0] == C_CROSS) return C_CROSS;
 
     return 0;
 }
-
-#undef X
-#undef O
 
 void Map::reset() {
     for (int i = 0; i < 3; ++i) {
