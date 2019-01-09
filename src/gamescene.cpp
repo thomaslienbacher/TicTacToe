@@ -163,6 +163,5 @@ void GameScene::handle(sf::Event event) {
                 }
             }
         }
-
     }
 }

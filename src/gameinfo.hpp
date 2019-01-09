@@ -7,8 +7,13 @@
 
 #include <SFML/Network.hpp>
 
-enum State {MENU, NETWORK, GAME};
-enum NetworkType {HOST, CLIENT};
+enum State {
+    MENU, NETWORK, GAME
+};
+
+enum NetworkType {
+    HOST, CLIENT
+};
 
 struct GameInfo {
     State gamestate;

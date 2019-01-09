@@ -42,11 +42,14 @@ public:
     explicit NetworkScene(GameInfo *gameInfo);
 
     void update(float delta);
-    void draw(std::shared_ptr<sf::RenderWindow>& window);
+
+    void draw(std::shared_ptr<sf::RenderWindow> &window);
+
     void handle(sf::Event event) override;
 };
 
 void *hostThread(void *threadInfo);
+
 void *clientThread(void *threadInfo);
 
 

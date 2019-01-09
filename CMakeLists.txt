@@ -3,21 +3,15 @@ project(TicTacToe)
 
 set(CMAKE_CXX_STANDARD 17)
 
+set(BUILD_USAGE TicTacToe) #use one [TicTacToe, AiTraining]
 
-######## config ########
-set(LIB_LOC ${CMAKE_CURRENT_SOURCE_DIR}/libs/)
-set(MGW_LOC "C:/MinGW/lib/")
-set(BUILD_USAGE TicTacToe)#use one [TicTacToe, AiTraining]
-######## config ########
-
-
-if(${CMAKE_BUILD_TYPE} STREQUAL Release)
+if (${CMAKE_BUILD_TYPE} STREQUAL Release)
     add_definitions("-DRELEASE_BUILD")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")
-elseif(${CMAKE_BUILD_TYPE} STREQUAL Debug)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -mwindows")
+elseif (${CMAKE_BUILD_TYPE} STREQUAL Debug)
     add_definitions("-DDEBUG_BUILD")
-endif()
-message("Building ${PROJECT_NAME} as ${BUILD_USAGE}")
+endif ()
+message("Building ${PROJECT_NAME} as ${BUILD_USAGE} in ${CMAKE_BUILD_TYPE} mode")
 
 if (${BUILD_USAGE} STREQUAL TicTacToe)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
@@ -33,15 +27,8 @@ elseif (${BUILD_USAGE} STREQUAL AiTraining)
     target_link_libraries(${PROJECT_NAME} SimpleNeuralNetwork)
 endif ()
 
-include_directories(${LIB_LOC}sfml/include/)
+find_package(PkgConfig)
+pkg_check_modules(SFML REQUIRED sfml-graphics sfml-network)
 
-target_link_libraries(${PROJECT_NAME} ${MGW_LOC}libopengl32.a)
-target_link_libraries(${PROJECT_NAME} ${MGW_LOC}libwinmm.a)
-target_link_libraries(${PROJECT_NAME} ${MGW_LOC}libgdi32.a)
-
-target_link_libraries(${PROJECT_NAME} ${LIB_LOC}sfml/libsfml-window.a)
-target_link_libraries(${PROJECT_NAME} ${LIB_LOC}sfml/libsfml-system.a)
-target_link_libraries(${PROJECT_NAME} ${LIB_LOC}sfml/libsfml-network.a)
-target_link_libraries(${PROJECT_NAME} ${LIB_LOC}sfml/libfreetype.a)
-target_link_libraries(${PROJECT_NAME} ${LIB_LOC}sfml/libsfml-graphics.a)
-target_link_libraries(${PROJECT_NAME} ${MGW_LOC}libopengl32.a)
+target_include_directories(${PROJECT_NAME} PUBLIC ${SFML_INCLUDE_DIRS})
+target_link_libraries(${PROJECT_NAME} ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})

@@ -9,7 +9,7 @@ Map::Map() {
 }
 
 bool Map::setAt(int x, int y, char type) {
-    if(!map[x][y]) {
+    if (!map[x][y]) {
         map[x][y] = type;
         return true;
     }
@@ -50,7 +50,7 @@ void Map::reset() {
 bool Map::isFull() {
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {
-            if(!map[i][j]) return false;
+            if (!map[i][j]) return false;
         }
     }
 

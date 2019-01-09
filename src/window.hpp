@@ -13,20 +13,24 @@
 class Window {
     sf::Clock clock;
     std::shared_ptr<sf::RenderWindow> window;
-    std::list<EventHandler*> eventHandlers;
+    std::list<EventHandler *> eventHandlers;
     bool focused = true;
 
 public:
     static constexpr unsigned int VWIDTH = 500;
     static constexpr unsigned int VHEIGHT = 500;
 
-    Window(std::string title);
+    explicit Window(std::string title);
+
     ~Window();
 
     float update(); //returns deltatime in seconds
     void prepare();
+
     void display();
+
     bool isRunning();
+
     bool isFocused() const;
 
     void addEventHandler(EventHandler *handler);

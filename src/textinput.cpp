@@ -16,7 +16,7 @@ void TextInput::update(float delta) {
 }
 
 void TextInput::draw(std::shared_ptr<sf::RenderWindow> &window) {
-    if(text.getLocalBounds().width > (size.width - PADDING * 2)) {
+    if (text.getLocalBounds().width > (size.width - PADDING * 2)) {
         raw = raw.substr(0, raw.size() - 1);
         limitReached = true;
     }
@@ -38,7 +38,7 @@ void TextInput::handle(sf::Event &event) {
             } else if (event.text.unicode == 13) { // enter
                 entered = true;
             } else {
-                if (canCharFit() && !limitReached) raw += (char)event.text.unicode;
+                if (canCharFit() && !limitReached) raw += (char) event.text.unicode;
             }
         }
     }
@@ -66,8 +66,10 @@ void TextInput::setSize(sf::FloatRect floatRect) {
     box.setPosition(size.left, size.top);
     box.setSize({size.width, size.height});
 
-    text.setPosition(std::lroundf(size.left + PADDING), std::lroundf(size.top + size.height / 2 - text.getCharacterSize() / 2));
+    text.setPosition(std::lroundf(size.left + PADDING),
+                     std::lroundf(size.top + size.height / 2 - text.getCharacterSize() / 2));
 }
+
 bool TextInput::isEntered() const {
     return entered;
 }

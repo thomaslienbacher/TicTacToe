@@ -13,16 +13,16 @@ MenuScene::MenuScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
     playHostButton.setTexture(buttonTex);
     playHostButton.setPosition({Window::VWIDTH / 2, Window::VHEIGHT / 4});
     playHostButton.setFont(gameInfo->font);
-    playHostButton.setOnclick([gameInfo]{
+    playHostButton.setOnclick([gameInfo] {
         gameInfo->gamestate = NETWORK;
         gameInfo->networkType = HOST;
     });
 
     playClientButton.setText("Play as Client");
     playClientButton.setTexture(buttonTex);
-    playClientButton.setPosition({Window::VWIDTH / 2, Window::VHEIGHT / 4.0f*3.0f});
+    playClientButton.setPosition({Window::VWIDTH / 2, Window::VHEIGHT / 4.0f * 3.0f});
     playClientButton.setFont(gameInfo->font);
-    playClientButton.setOnclick([gameInfo]{
+    playClientButton.setOnclick([gameInfo] {
         gameInfo->gamestate = NETWORK;
         gameInfo->networkType = CLIENT;
     });
@@ -34,15 +34,15 @@ void MenuScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
 }
 
 void MenuScene::handle(sf::Event event) {
-    if(event.type == sf::Event::MouseButtonPressed) {
-        if(event.mouseButton.button == sf::Mouse::Button::Left){
+    if (event.type == sf::Event::MouseButtonPressed) {
+        if (event.mouseButton.button == sf::Mouse::Button::Left) {
             playHostButton.mouseDown(event.mouseButton.x, event.mouseButton.y);
             playClientButton.mouseDown(event.mouseButton.x, event.mouseButton.y);
         }
     }
 
-    if(event.type == sf::Event::MouseButtonReleased) {
-        if(event.mouseButton.button == sf::Mouse::Button::Left){
+    if (event.type == sf::Event::MouseButtonReleased) {
+        if (event.mouseButton.button == sf::Mouse::Button::Left) {
             playHostButton.mouseUp(event.mouseButton.x, event.mouseButton.y);
             playClientButton.mouseUp(event.mouseButton.x, event.mouseButton.y);
         }

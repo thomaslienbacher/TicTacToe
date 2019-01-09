@@ -17,9 +17,13 @@ public:
     Map();
 
     bool setAt(int x, int y, char type);
+
     char getAt(int x, int y);
+
     char getWinner();
+
     void reset();
+
     bool isFull();
 };
 

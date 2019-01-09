@@ -9,7 +9,7 @@
 #include <cmath>
 
 NetworkScene::NetworkScene(GameInfo *gameInfo)
-: gameInfo(gameInfo) {
+        : gameInfo(gameInfo) {
     loadAnimTex.loadFromFile("res/load_circle.png");
     loadAnimTex.setSmooth(true);
 
@@ -39,15 +39,15 @@ NetworkScene::NetworkScene(GameInfo *gameInfo)
 }
 
 void NetworkScene::update(float delta) {
-    if(threadInfo.state == ThreadInfo::IDLE) {
-        if(gameInfo->networkType == HOST) threadInfo.state = ThreadInfo::SETUP;
-        if(gameInfo->networkType == CLIENT) threadInfo.state = ThreadInfo::GATHERING_INFO;
+    if (threadInfo.state == ThreadInfo::IDLE) {
+        if (gameInfo->networkType == HOST) threadInfo.state = ThreadInfo::SETUP;
+        if (gameInfo->networkType == CLIENT) threadInfo.state = ThreadInfo::GATHERING_INFO;
     }
 
-    if(threadInfo.state == ThreadInfo::GATHERING_INFO) {
+    if (threadInfo.state == ThreadInfo::GATHERING_INFO) {
         ipInput.update(delta);
 
-        if(ipInput.isEntered()) {
+        if (ipInput.isEntered()) {
             threadInfo.state = ThreadInfo::SETUP;
             threadInfo.ip = ipInput.getInput();
         }
@@ -104,7 +104,7 @@ void NetworkScene::handle(sf::Event event) {
 
 //TODO: correct error handling and use return value
 void *hostThread(void *threadInfo) {
-    auto ti = (NetworkScene::ThreadInfo*) threadInfo;
+    auto ti = (NetworkScene::ThreadInfo *) threadInfo;
     ti->listener.listen(ti->port);
 
     if (ti->listener.accept(ti->socket) == sf::Socket::Done) {
@@ -119,7 +119,7 @@ void *hostThread(void *threadInfo) {
 }
 
 void *clientThread(void *threadInfo) {
-    auto ti = (NetworkScene::ThreadInfo*) threadInfo;
+    auto ti = (NetworkScene::ThreadInfo *) threadInfo;
 
     while (ti->state != NetworkScene::ThreadInfo::CONNECTED) {
         if (ti->socket.connect(ti->ip, ti->port) == sf::Socket::Done) {

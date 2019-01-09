@@ -2,6 +2,7 @@
 #include "gamescene.hpp"
 #include "menuscene.hpp"
 #include "networkscene.hpp"
+#include <SFML/System.hpp>
 
 int main() {
     GameInfo gameInfo;
