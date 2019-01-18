@@ -15,7 +15,7 @@ Window::Window(std::string title) {
     window->setVerticalSyncEnabled(true);
 
     sf::Image icon;
-    icon.loadFromFile("res/icon.png");
+    icon.loadFromFile("res/icon_small.png");
     window->setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 }
 
