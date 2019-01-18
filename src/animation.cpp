@@ -5,7 +5,7 @@
 #include "animation.hpp"
 
 Animation::Animation(float fps, sf::Texture &texture, int rows, int cols) {
-    swapTime = 1.0f/fps;
+    swapTime = 1.0f / fps;
     setTexture(texture, rows, cols);
 }
 
@@ -14,11 +14,11 @@ void Animation::update(float delta) {
 }
 
 void Animation::draw(std::shared_ptr<sf::RenderWindow> &window) {
-    if(time > swapTime) {
+    if (time > swapTime) {
         //next frame
         time -= swapTime;
         currentFrame++;
-        if(currentFrame == regions.size()) currentFrame = 0;
+        if (currentFrame == regions.size()) currentFrame = 0;
 
         sprite.setTextureRect(regions[currentFrame]);
     }
@@ -27,14 +27,14 @@ void Animation::draw(std::shared_ptr<sf::RenderWindow> &window) {
 }
 
 void Animation::setFps(float fps) {
-    swapTime = 1.0f/fps;
+    swapTime = 1.0f / fps;
 }
 
 //TODO: clear regions
 void Animation::setTexture(sf::Texture &texture, int rows, int cols) {
     sprite.setTexture(texture);
-    int w = (int)texture.getSize().x / cols;
-    int h = (int)texture.getSize().y / rows;
+    int w = (int) texture.getSize().x / cols;
+    int h = (int) texture.getSize().y / rows;
 
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {

@@ -26,6 +26,7 @@ int main() {
         }
 
         float delta = window.update();
+
         //update
 
         if (gameInfo.gamestate == NETWORK) {
@@ -38,6 +39,7 @@ int main() {
 
 
         window.prepare();
+
         //render
 
         if (gameInfo.gamestate == NETWORK) {

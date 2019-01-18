@@ -10,7 +10,7 @@
 #include <list>
 #include <memory>
 
-//this class is removed from source but still in the files here
+//this class isn't used but still included
 class Animation {
 
     float swapTime;
@@ -21,14 +21,18 @@ class Animation {
 
 public:
     Animation() = default;
+
     Animation(float fps, sf::Texture &texture, int rows, int cols);
 
     void setFps(float fps);
+
     void setTexture(sf::Texture &texture, int rows, int cols);
+
     void setPosition(sf::Vector2f pos);
 
     void update(float delta);
-    void draw(std::shared_ptr<sf::RenderWindow>& window);
+
+    void draw(std::shared_ptr<sf::RenderWindow> &window);
 };
 
 
