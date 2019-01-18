@@ -18,8 +18,7 @@ set(TICTACTOE_SRC src/main.cpp src/window.cpp src/window.hpp src/map.hpp src/map
         src/textinput.cpp src/textinput.hpp src/networkscene.cpp src/networkscene.hpp)
 add_executable(${PROJECT_NAME} ${TICTACTOE_SRC})
 
-find_package(PkgConfig)
-pkg_check_modules(SFML REQUIRED sfml-graphics sfml-network)
+find_package(SFML 2 COMPONENTS system graphics network)
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${SFML_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME} ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
