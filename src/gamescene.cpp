@@ -92,7 +92,7 @@ void GameScene::update(float delta) {
     }
 }
 
-void GameScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
+void GameScene::draw(sf::RenderWindow &window) {
     std::stringstream st;
     char winner = map.getWinner();
 
@@ -120,8 +120,8 @@ void GameScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
     auto ir = title.getLocalBounds();
     title.setOrigin(std::lroundf(ir.width / 2), std::lroundf(ir.height / 2));
 
-    window->draw(title);
-    window->draw(layout);
+    window.draw(title);
+    window.draw(layout);
 
     static sf::Sprite s;
     for (int i = 0; i < 3; ++i) {
@@ -139,12 +139,12 @@ void GameScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
                           layout.getOrigin().x + sr.x / 2,
                           (float) j * (layoutTex.getSize().y / 3.0f + 3.0f) + layout.getPosition().y -
                           layout.getOrigin().y + sr.y / 2);
-            window->draw(s);
+            window.draw(s);
         }
     }
 }
 
-void GameScene::handle(sf::Event event) {
+void GameScene::handle(sf::Event &event) {
     if (event.type == sf::Event::MouseButtonPressed) {
         if (event.mouseButton.button == sf::Mouse::Button::Left) {
             for (int i = 0; i < 3; ++i) {

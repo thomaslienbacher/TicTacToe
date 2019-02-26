@@ -105,12 +105,12 @@ void NetworkScene::update(float delta) {
     }
 }
 
-void NetworkScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
+void NetworkScene::draw(sf::RenderWindow &window) {
     if (threadInfo.state == ThreadInfo::GATHERING_INFO) {
         auto fr = ipText.getLocalBounds();
         ipText.setOrigin(std::lroundf(fr.width / 2), std::lroundf(fr.height / 2));
 
-        window->draw(ipText);
+        window.draw(ipText);
         ipInput.draw(window);
     }
 
@@ -118,12 +118,12 @@ void NetworkScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
         auto fr = loadText.getLocalBounds();
         loadText.setOrigin(std::lroundf(fr.width / 2), std::lroundf(fr.height / 2));
 
-        window->draw(loadAnim);
-        window->draw(loadText);
+        window.draw(loadAnim);
+        window.draw(loadText);
     }
 }
 
-void NetworkScene::handle(sf::Event event) {
+void NetworkScene::handle(sf::Event &event) {
     if (threadInfo.state == ThreadInfo::GATHERING_INFO) {
         ipInput.handle(event);
     }

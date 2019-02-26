@@ -39,9 +39,9 @@ public:
 
     void update(float delta);
 
-    void draw(std::shared_ptr<sf::RenderWindow> &window);
+    void draw(sf::RenderWindow &window);
 
-    void handle(sf::Event event) override;
+    void handle(sf::Event &event) override;
 };
 
 

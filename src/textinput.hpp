@@ -30,7 +30,7 @@ public:
 
     void handle(sf::Event &event);
 
-    void draw(std::shared_ptr<sf::RenderWindow> &window);
+    void draw(sf::RenderWindow &window);
 
     std::string getInput();
 
