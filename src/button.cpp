@@ -11,7 +11,7 @@ Button::Button(std::string text, sf::Texture texture, sf::Vector2f position, std
     sprite.setPosition(position);
 }
 
-void Button::draw(std::shared_ptr<sf::RenderWindow> &window) {
+void Button::draw(sf::RenderWindow &window) {
     if (down) {
         sprite.setScale(DOWN_SCALE, DOWN_SCALE);
         text.setScale(DOWN_SCALE, DOWN_SCALE);
@@ -25,8 +25,8 @@ void Button::draw(std::shared_ptr<sf::RenderWindow> &window) {
                      std::lroundf(sprite.getPosition().y - gb.height / 2));
     text.setFillColor(sf::Color::Black);
 
-    window->draw(sprite);
-    window->draw(text);
+    window.draw(sprite);
+    window.draw(text);
 }
 
 void Button::mouseDown(int x, int y) {

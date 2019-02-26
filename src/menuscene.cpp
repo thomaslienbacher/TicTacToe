@@ -28,12 +28,12 @@ MenuScene::MenuScene(GameInfo *gameInfo) : gameInfo(gameInfo) {
     });
 }
 
-void MenuScene::draw(std::shared_ptr<sf::RenderWindow> &window) {
+void MenuScene::draw(sf::RenderWindow &window) {
     playHostButton.draw(window);
     playClientButton.draw(window);
 }
 
-void MenuScene::handle(sf::Event event) {
+void MenuScene::handle(sf::Event &event) {
     if (event.type == sf::Event::MouseButtonPressed) {
         if (event.mouseButton.button == sf::Mouse::Button::Left) {
             playHostButton.mouseDown(event.mouseButton.x, event.mouseButton.y);

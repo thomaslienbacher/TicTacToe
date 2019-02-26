@@ -9,7 +9,7 @@
 #include <SFML/Graphics.hpp>
 
 struct EventHandler {
-    virtual void handle(sf::Event) = 0;
+    virtual void handle(sf::Event&) = 0;
 };
 
 

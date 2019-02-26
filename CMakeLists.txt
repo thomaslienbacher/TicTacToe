@@ -12,7 +12,6 @@ endif ()
 
 message("Building ${PROJECT_NAME} in ${CMAKE_BUILD_TYPE} mode")
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 set(TICTACTOE_SRC src/main.cpp src/window.cpp src/window.hpp src/map.hpp src/map.cpp src/map.hpp src/button.cpp src/button.hpp
         src/gamescene.cpp src/gamescene.hpp src/menuscene.cpp src/menuscene.hpp src/eventhandler.hpp src/gameinfo.hpp
         src/textinput.cpp src/textinput.hpp src/networkscene.cpp src/networkscene.hpp)

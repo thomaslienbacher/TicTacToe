@@ -15,7 +15,7 @@ void TextInput::update(float delta) {
     }
 }
 
-void TextInput::draw(std::shared_ptr<sf::RenderWindow> &window) {
+void TextInput::draw(sf::RenderWindow &window) {
     if (text.getLocalBounds().width > (size.width - PADDING * 2)) {
         raw = raw.substr(0, raw.size() - 1);
         limitReached = true;
@@ -24,8 +24,8 @@ void TextInput::draw(std::shared_ptr<sf::RenderWindow> &window) {
     if (showUnderscore && canCharFit() && !limitReached) text.setString(raw + "_");
     else text.setString(raw);
 
-    window->draw(box);
-    window->draw(text);
+    window.draw(box);
+    window.draw(text);
 }
 
 //TODO: remove quick blink of protruding char

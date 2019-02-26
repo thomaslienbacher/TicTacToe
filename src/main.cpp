@@ -22,7 +22,7 @@ int main() {
 
     while (window.isRunning()) {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) && window.isFocused()) {
-            window.getWindow()->close();
+            window.getWindow().close();
         }
 
         float delta = window.update();

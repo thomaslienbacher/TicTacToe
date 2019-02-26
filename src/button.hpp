@@ -24,7 +24,7 @@ public:
 
     Button(std::string text, sf::Texture texture, sf::Vector2f position, std::function<void()> onclick);
 
-    void draw(std::shared_ptr<sf::RenderWindow> &window);
+    void draw(sf::RenderWindow &window);
 
     void mouseDown(int x, int y);
 

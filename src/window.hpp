@@ -12,7 +12,7 @@
 
 class Window {
     sf::Clock clock;
-    std::shared_ptr<sf::RenderWindow> window;
+    sf::RenderWindow window;
     std::list<EventHandler *> eventHandlers;
     bool focused = true;
 
@@ -35,7 +35,7 @@ public:
 
     void addEventHandler(EventHandler *handler);
 
-    std::shared_ptr<sf::RenderWindow> &getWindow();
+    sf::RenderWindow &getWindow();
 };
 
 
