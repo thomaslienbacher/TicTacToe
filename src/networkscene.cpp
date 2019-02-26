@@ -55,15 +55,43 @@ void NetworkScene::update(float delta) {
 
     if (threadInfo.state == ThreadInfo::SETUP) {
         if (gameInfo->networkType == HOST) {
-            pthread_create(&thread, nullptr, hostThread, &this->threadInfo);
+            //host thread
+            thread = std::thread([=] {
+                auto ti = &threadInfo;
+                ti->listener.listen(ThreadInfo::PORT);
+
+                if (ti->listener.accept(ti->socket) == sf::Socket::Done) {
+                    ti->state = ThreadInfo::CONNECTED;
+                    ti->socket.setBlocking(false);
+                    ti->listener.close();
+                } else {
+                    std::cerr << "Couldn't accept the client!" << std::endl;
+                }
+            });
+            thread.detach();
             gameInfo->me = Map::C_CROSS;
         }
 
         if (gameInfo->networkType == CLIENT) {
-            pthread_create(&thread, nullptr, clientThread, &this->threadInfo);
+            //client thread
+            thread = std::thread([=] {
+                auto ti = &threadInfo;
+
+                while (ti->state != ThreadInfo::CONNECTED) {
+                    if (ti->socket.connect(ti->ip, ThreadInfo::PORT) == sf::Socket::Done) {
+                        ti->state = ThreadInfo::CONNECTED;
+                        ti->socket.setBlocking(false);
+
+                    } else {
+                        std::cerr << "Couldn't connect to a host!" << std::endl;
+                    }
+
+                    sf::sleep(sf::milliseconds(100));
+                }
+            });
+            thread.detach();
             gameInfo->me = Map::C_CIRCLE;
         }
-
         threadInfo.state = ThreadInfo::LOADING;
     }
 
@@ -72,7 +100,6 @@ void NetworkScene::update(float delta) {
     }
 
     if (threadInfo.state == ThreadInfo::CONNECTED) {
-        pthread_join(thread, nullptr);
         gameInfo->gamestate = GAME;
         gameInfo->socket = &threadInfo.socket;
     }
@@ -100,37 +127,4 @@ void NetworkScene::handle(sf::Event event) {
     if (threadInfo.state == ThreadInfo::GATHERING_INFO) {
         ipInput.handle(event);
     }
-}
-
-void *NetworkScene::hostThread(void *threadInfo) {
-    auto ti = (ThreadInfo *) threadInfo;
-    ti->listener.listen(ThreadInfo::PORT);
-
-    if (ti->listener.accept(ti->socket) == sf::Socket::Done) {
-        ti->state = ThreadInfo::CONNECTED;
-        ti->socket.setBlocking(false);
-        ti->listener.close();
-    } else {
-        std::cerr << "Couldn't accept the client!" << std::endl;
-    }
-
-    return nullptr;
-}
-
-void *NetworkScene::clientThread(void *threadInfo) {
-    auto ti = (ThreadInfo *) threadInfo;
-
-    while (ti->state != ThreadInfo::CONNECTED) {
-        if (ti->socket.connect(ti->ip, ThreadInfo::PORT) == sf::Socket::Done) {
-            ti->state = ThreadInfo::CONNECTED;
-            ti->socket.setBlocking(false);
-
-        } else {
-            std::cerr << "Couldn't connect to a host!" << std::endl;
-        }
-
-        sf::sleep(sf::milliseconds(200));
-    }
-
-    return nullptr;
 }

@@ -5,8 +5,6 @@
 #ifndef TICTACTOE_NETWORKSCENE_HPP
 #define TICTACTOE_NETWORKSCENE_HPP
 
-
-#include <pthread.h>
 #include <SFML/Network.hpp>
 #include "eventhandler.hpp"
 #include "gameinfo.hpp"
@@ -33,12 +31,8 @@ class NetworkScene : public EventHandler {
     sf::Text loadText;
     sf::Text ipText;
 
-    pthread_t thread;//TODO: use std::thread instead of pthreads
+    std::thread thread;
     ThreadInfo threadInfo;
-
-    static void *hostThread(void *threadInfo);
-
-    static void *clientThread(void *threadInfo);
 
 public:
     explicit NetworkScene(GameInfo *gameInfo);
