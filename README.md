@@ -6,4 +6,4 @@ Compile using CMake or by opening the Project in CLion.
 
 Dependencies:
 * C++ 17
-* SFML
+* SFML 2.5
