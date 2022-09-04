@@ -5,7 +5,12 @@ set(CMAKE_CXX_STANDARD 17)
 
 if (${CMAKE_BUILD_TYPE} STREQUAL Release)
     add_definitions("-DRELEASE_BUILD")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -mwindows")
+
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")
+    
+    if (WIN32)
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mwindows")
+    endif ()
 elseif (${CMAKE_BUILD_TYPE} STREQUAL Debug)
     add_definitions("-DDEBUG_BUILD")
 endif ()
@@ -19,3 +24,4 @@ add_executable(${PROJECT_NAME} ${TICTACTOE_SRC})
 
 find_package(SFML 2.5 COMPONENTS system graphics network REQUIRED)
 target_link_libraries(${PROJECT_NAME} sfml-system sfml-graphics sfml-network)
+
